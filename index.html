@@ -3,112 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our New Website is Coming Soon</title>
+    <title>Romain & Pomme — Le mariage arrive bientôt</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mea+Culpa&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="overlay">
-    <div class="card">
+<main class="scroller">
 
-        <img src="image/chat.jpg"
-             alt="Website preview"
-             class="hero">
+    <!-- PAGE 1 — HERO -->
+    <section class="page hero-page">
+        <div class="bg" style="background-image:url('image/chat.jpg')"></div>
+        <div class="bg-veil"></div>
 
-        <h1>Romain et Pomme </h1>
-
-        <p>
-            Le site du marriage arrive bientôt !
-        </p>
-
-
-        <p class="small">
-            Merci pour votre patience. 
-            Cette page deviendra le nouveau site dès qu'il sera prêt...
-        </p>
-
-<hr>
-
-<section class="programme">
-    <h2>Programme du week-end</h2>
-
-    <h3>Vendredi 19 février 2027</h3>
-
-    <div class="programme-item">
-        <span class="time">Journée</span>
-        <div>
-            <h4>Sortie ski de fond au Revard</h4>
-            <p>Pour celles et ceux qui le souhaitent, nous vous proposons une sortie en ski de fond pour bien commencer le week-end.</p>
+        <div class="glass-card hero-card">
+            <p class="eyebrow">Le site du mariage</p>
+            <h1>Romain <span class="amp">&amp;</span> Pomme</h1>
+            <p class="lede">arrive bientôt !</p>
+            <p class="small">
+                Merci pour votre patience.<br>
+                Cette page deviendra le nouveau site dès qu'il sera prêt&nbsp;...
+            </p>
         </div>
-    </div>
 
-    <hr>
+        <a href="#programme" class="scroll-cue" aria-label="Découvrir le programme">
+            <span>Le programme</span>
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.4">
+                <path d="M12 4v15M6 13l6 6 6-6"/>
+            </svg>
+        </a>
+    </section>
 
-    <h3>Samedi 20 février 2027</h3>
+    <!-- PAGE 2 — PROGRAMME -->
+    <section class="page programme-page" id="programme">
+        <div class="bg" style="background-image:url('image/chat.jpg')"></div>
+        <div class="bg-veil bg-veil--light"></div>
 
-    <div class="programme-item">
-        <span class="time">10h30</span>
-        <div>
-            <h4>Cérémonie</h4>
-            <p>À l'Église Saint-Martin de Barraux.</p>
+        <div class="glass-card programme-card">
+            <p class="eyebrow">20 · 21 février 2027</p>
+            <h2>Programme du week-end</h2>
+
+            <div class="timeline">
+
+                <h3 class="day">Vendredi 19 février</h3>
+                <div class="event">
+                    <div class="node"><span class="node-time">Journée</span></div>
+                    <div class="event-body">
+                        <h4>Sortie ski de fond au Revard</h4>
+                        <p>Pour celles et ceux qui le souhaitent, nous vous proposons une sortie en ski de fond pour bien commencer le week-end.</p>
+                    </div>
+                </div>
+
+                <h3 class="day">Samedi 20 février</h3>
+                <div class="event">
+                    <div class="node"><span class="node-time">10h30</span></div>
+                    <div class="event-body">
+                        <h4>Cérémonie</h4>
+                        <p>À l'Église Saint-Martin de Barraux.</p>
+                    </div>
+                </div>
+                <div class="event">
+                    <div class="node"><span class="node-time">11h30</span></div>
+                    <div class="event-body">
+                        <h4>Marche &amp; vin d'honneur</h4>
+                        <p>Marche vers le Fort de Barraux (15 min), puis vin d'honneur.</p>
+                    </div>
+                </div>
+                <div class="event">
+                    <div class="node"><span class="node-time">12h30</span></div>
+                    <div class="event-body">
+                        <h4>Repas</h4>
+                        <p>Repas placé.</p>
+                    </div>
+                </div>
+                <div class="event">
+                    <div class="node"><span class="node-time">14h30</span></div>
+                    <div class="event-body">
+                        <h4>Après-midi festive</h4>
+                        <p>Animations dansantes, jeux et bonne humeur.</p>
+                    </div>
+                </div>
+                <div class="event">
+                    <div class="node"><span class="node-time">17h00</span></div>
+                    <div class="event-body">
+                        <h4>Goûter</h4>
+                    </div>
+                </div>
+                <div class="event">
+                    <div class="node"><span class="node-time">19h30</span></div>
+                    <div class="event-body">
+                        <h4>Repas crêpes</h4>
+                    </div>
+                </div>
+
+                <h3 class="day">Dimanche 21 février</h3>
+                <div class="event">
+                    <div class="node"><span class="node-time">10h30</span></div>
+                    <div class="event-body">
+                        <h4>Retour de noce</h4>
+                        <p>Fort de Barraux.</p>
+                    </div>
+                </div>
+
+            </div>
         </div>
-    </div>
+    </section>
 
-    <div class="programme-item">
-        <span class="time">11h30</span>
-        <div>
-            <h4>Marche & vin d'honneur</h4>
-            <p>Marche vers le Fort de Barraux (15 min), puis vin d'honneur.</p>
-        </div>
-    </div>
-
-    <div class="programme-item">
-        <span class="time">12h30</span>
-        <div>
-            <h4>Repas</h4>
-            <p>Repas placé.</p>
-        </div>
-    </div>
-
-    <div class="programme-item">
-        <span class="time">14h30</span>
-        <div>
-            <h4>Après-midi festive</h4>
-            <p>Animations dansante, jeux et bonne humeur.</p>
-        </div>
-    </div>
-
-    <div class="programme-item">
-        <span class="time">17h00</span>
-        <div>
-            <h4>Goûter</h4>
-        </div>
-    </div>
-
-    <div class="programme-item">
-        <span class="time">19h30</span>
-        <div>
-            <h4>Repas crêpes</h4>
-            <p>  </p>
-        </div>
-    </div>
-
-    <hr>
-
-    <h3>Dimanche 21 février 2027</h3>
-
-    <div class="programme-item">
-        <span class="time">10h30</span>
-        <div>
-            <h4>Retour de noce (Fort Barraux)</h4>
-            <p>  </p>
-        </div>
-    </div>
-</section>
-
-    </div>
-</div>
+</main>
 
 </body>
 </html>
