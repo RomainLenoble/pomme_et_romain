@@ -128,7 +128,7 @@ function wireForm(card, gift) {
             feedback.className = "gift-feedback ok";
         } catch (err) {
             console.error(err);
-            feedback.textContent = "Oups, la contribution n'a pas pu être enregistrée. Réessayez dans un instant.";
+            feedback.textContent = `Oups, la contribution n'a pas pu être enregistrée. Réessayez dans un instant.\nErreur : ${err instanceof Error ? err.message : String(err)}`;
             feedback.className = "gift-feedback err";
         } finally {
             button.disabled = false;
