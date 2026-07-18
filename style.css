@@ -386,14 +386,13 @@ h1 .amp {
 
 .game-card {
     max-width: 1400px;
-    padding: 56px 48px 44px;
+    padding: 20px 0px 10px;
     /* La carte occupe toute la hauteur visible disponible.
        svh = "small viewport height" : la plus petite hauteur possible
        (barre d'adresse affichée). Le jeu n'est donc JAMAIS coupé,
        quel que soit le navigateur ou l'état de la barre d'adresse.
        (120px = padding vertical de .page : 60px en haut + 60px en bas.) */
     height: calc(100vh - 120px);   /* repli navigateurs anciens */
-    height: calc(100svh - 120px);
     display: flex;
     flex-direction: column;
 }
@@ -403,7 +402,7 @@ h1 .amp {
     font-weight: 400;
     font-size: 2.6rem;
     color: var(--ink);
-    margin-bottom: 14px;
+    margin-bottom: 0px;
 }
 
 .game-intro {
