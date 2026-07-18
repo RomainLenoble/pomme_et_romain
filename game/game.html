@@ -270,6 +270,27 @@
             text-shadow: 0 1px 0 rgba(255, 235, 170, 0.8);
         }
 
+        #boutonRetourMenu {
+            position: absolute;
+            left: 50%;
+            top: 74%;
+            transform: translateX(-50%);
+            display: none;
+            border: 2px solid #7b260d;
+            border-radius: 10px;
+            background: rgba(255, 244, 214, 0.9);
+            color: #7b260d;
+            font-family: Georgia, "Times New Roman", serif;
+            font-size: clamp(13px, 1.4vw, 21px);
+            font-weight: 700;
+            padding: 0.4em 1em;
+            cursor: pointer;
+        }
+
+        #boutonRetourMenu.visible {
+            display: inline-block;
+        }
+
 </style>
 </head>
 
@@ -295,6 +316,7 @@
                 aria-label="Nom du joueur, 20 caractères maximum"
             >
             <div id="messageNomJoueur" aria-live="polite"></div>
+            <button id="boutonRetourMenu" type="button">Rejouer sans enregistrer</button>
         </div>
 
         <img
@@ -368,6 +390,7 @@
         const ecranNomJoueur = document.getElementById("ecranNomJoueur");
         const saisieNomJoueur = document.getElementById("saisieNomJoueur");
         const messageNomJoueur = document.getElementById("messageNomJoueur");
+        const boutonRetourMenu = document.getElementById("boutonRetourMenu");
         let ecranNomVisible = false;
         let enregistrementNomEnCours = false;
         let partieEnFin = false;
@@ -452,6 +475,9 @@
                 if (event.key === "Enter" && !event.repeat) {
                     event.preventDefault();
                     validerNomJoueur();
+                } else if (event.key === "Escape" && !enregistrementNomEnCours) {
+                    event.preventDefault();
+                    fermerSaisieNomEtRetourMenu();
                 }
                 return;
             }
@@ -941,6 +967,7 @@
             enregistrementNomEnCours = false;
             messageNomJoueur.textContent = "";
             saisieNomJoueur.value = "";
+            boutonRetourMenu.classList.remove("visible");
             ecranNomJoueur.classList.add("visible");
             setTimeout(function () {
                 saisieNomJoueur.focus();
@@ -971,9 +998,10 @@
             } catch (erreur) {
                 console.error("Impossible d'enregistrer le score :", erreur);
                 messageNomJoueur.textContent =
-                    "Impossible d'enregistrer le score. Appuyez sur Entrée pour réessayer.";
+                    "Impossible d'enregistrer le score. Appuyez sur Entrée pour réessayer, ou continuez sans enregistrer.";
                 enregistrementNomEnCours = false;
                 saisieNomJoueur.disabled = false;
+                boutonRetourMenu.classList.add("visible");
                 saisieNomJoueur.focus();
             }
         }
@@ -982,6 +1010,7 @@
             ecranNomVisible = false;
             enregistrementNomEnCours = false;
             saisieNomJoueur.disabled = false;
+            boutonRetourMenu.classList.remove("visible");
             ecranNomJoueur.classList.remove("visible");
             ecranTitre.classList.remove("cache");
             partieEnFin = false;
@@ -990,6 +1019,12 @@
             nombrePommesElement.textContent = "0";
             romain.src = imageStatique;
         }
+
+        // Retour au menu sans enregistrer (clic ou toucher) : permet de rejouer
+        // même si l'enregistrement du score échoue.
+        boutonRetourMenu.addEventListener("click", function () {
+            fermerSaisieNomEtRetourMenu();
+        });
 
         async function chargerScores() {
             messageScores.textContent = "Chargement...";
