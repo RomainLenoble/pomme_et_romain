@@ -1,0 +1,23 @@
+Fichiers à placer dans le même dossier sur le serveur :
+- main(2).html
+- scores.php
+- scores.json
+- les images et dossiers du jeu
+
+Le serveur doit prendre en charge PHP 8.0 ou plus récent.
+Le processus PHP doit avoir le droit d'écrire dans scores.json.
+
+Exemple Linux :
+  chmod 664 scores.json
+
+Test local :
+  php -S localhost:8000
+Puis ouvrir :
+  http://localhost:8000/main(2).html
+
+Lecture du classement : GET scores.php
+Enregistrement : POST scores.php avec JSON {"nom":"Marcus","score":125}
+
+Dans le jeu, l'écran des scores utilise maintenant scores.php.
+Pour enregistrer le score courant depuis le JavaScript :
+  await sauvegarderScoreDuJoueur("Nom du joueur");
