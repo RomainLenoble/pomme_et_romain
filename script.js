@@ -100,7 +100,7 @@ function renderSkeleton() {
                     <input type="number" min="1" step="1" inputmode="numeric" placeholder="Montant en €" required>
                     <button type="submit">Participer</button>
                 </div>
-                <textarea maxlength="280" rows="2" placeholder="Un petit mot pour les mariés (optionnel)"></textarea>
+                <textarea maxlength="1000" rows="2" placeholder="Un petit mot pour les mariés (optionnel)"></textarea>
             </form>
             <p class="gift-feedback" data-role="feedback"></p>
         `;
@@ -134,7 +134,7 @@ function wireForm(card, gift) {
     form.addEventListener("submit", async (e) => {
         e.preventDefault();
         const amount = Math.floor(Number(input.value));
-        const message = messageEl.value.trim().slice(0, 280);
+        const message = messageEl.value.trim().slice(0, 1000);
 
         feedback.textContent = "";
         feedback.className = "gift-feedback";
