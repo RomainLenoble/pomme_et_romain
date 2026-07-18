@@ -179,7 +179,33 @@ async function contribute(giftId, amount, message) {
     });
 }
 
+function initNav() {
+    const links = document.querySelectorAll(".site-nav-link");
+    const sections = Array.from(links)
+        .map((link) => document.getElementById(link.dataset.target))
+        .filter(Boolean);
+
+    if (!sections.length) return;
+
+    const setActive = (id) => {
+        links.forEach((link) => link.classList.toggle("active", link.dataset.target === id));
+    };
+
+    const observer = new IntersectionObserver(
+        (entries) => {
+            const visible = entries
+                .filter((e) => e.isIntersecting)
+                .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+            if (visible) setActive(visible.target.id);
+        },
+        { threshold: [0.4, 0.6] }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+}
+
 function init() {
+    initNav();
     renderSkeleton();
 
     if (firebaseConfig.apiKey === "REMPLACER_MOI") {
