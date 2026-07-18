@@ -18,7 +18,7 @@ const firebaseConfig = {
     storageBucket: "pomme-romain-mariage.firebasestorage.app",
     messagingSenderId: "752822577885",
     appId: "1:752822577885:web:1878bcd7994f23d7464934"
-  };
+};
 
 const GIFTS = [
     {
