@@ -48,21 +48,57 @@ service cloud.firestore {
         request.resource.data.raised is number &&
         request.resource.data.raised > resource.data.raised &&
         request.resource.data.raised <= resource.data.raised + 100000;
+
+      match /contributions/{entryId} {
+        allow read: if false;
+        allow update: if false;
+        allow delete: if false;
+        allow create: if
+          request.resource.data.keys().hasOnly(['amount', 'message', 'createdAt']) &&
+          request.resource.data.amount is number &&
+          request.resource.data.amount > 0 &&
+          request.resource.data.amount <= 100000 &&
+          request.resource.data.message is string &&
+          request.resource.data.message.size() <= 280;
+      }
     }
   }
 }
 ```
 
 Ces règles :
-- laissent tout le monde **lire** les montants (nécessaire pour afficher
-  la liste),
-- interdisent la création/suppression de documents depuis le site (vous
-  les créez vous-même, voir étape 5),
+- laissent tout le monde **lire** les montants totaux (nécessaire pour
+  afficher la liste publique),
+- interdisent la création/suppression/lecture des cadeaux eux-mêmes
+  depuis le site (vous créez les documents `cadeaux/{id}` vous-même,
+  voir étape 5),
 - n'autorisent que d'**augmenter** le champ `raised`, d'un montant
   raisonnable à la fois — personne ne peut remettre un cadeau à zéro ou
-  changer autre chose.
+  changer autre chose,
+- autorisent la création d'une entrée individuelle (`contributions`)
+  par participation — mais **personne ne peut lire** ces entrées
+  depuis le site public (`allow read: if false`). Seuls vous, en tant
+  que propriétaires du projet Firebase, pouvez les consulter dans la
+  console (voir section suivante).
 
 Cliquez sur **Publier**.
+
+## 4bis. Voir qui a participé et lire les petits mots
+
+Chaque contribution est aussi enregistrée individuellement (montant +
+message éventuel, horodatage), dans une sous-collection, **invisible
+depuis le site** — les invités ne voient jamais que le total. Pour la
+consulter vous-même :
+
+1. Firestore → onglet **Données**
+2. Ouvrez `cadeaux` → cliquez sur un cadeau (ex. `velo`)
+3. Vous verrez une sous-collection `contributions` listant chaque
+   participation avec son montant, son message et sa date.
+
+C'est le seul endroit où cette information existe — elle n'est reliée à
+aucun nom (le formulaire n'en demande pas), donc si vous voulez savoir
+*qui* a donné combien, ce sera surtout grâce au message laissé, ou en
+recoupant avec ce que les invités vous disent directement.
 
 ## 5. Créer un document par cadeau
 

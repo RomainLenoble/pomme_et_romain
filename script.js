@@ -56,8 +56,10 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/fireba
 import {
     getFirestore,
     doc,
+    collection,
     onSnapshot,
-    runTransaction
+    runTransaction,
+    serverTimestamp
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
 const listEl = document.getElementById("gift-list");
@@ -83,8 +85,11 @@ function renderSkeleton() {
             ${gift.target ? `<div class="progress-track"><div class="progress-fill" data-role="fill" style="width:0%"></div></div>` : ""}
             ${gift.desc ? `<p class="gift-desc">${gift.desc}</p>` : ""}
             <form class="gift-form" data-role="form">
-                <input type="number" min="1" step="1" inputmode="numeric" placeholder="Montant en €" required>
-                <button type="submit">Participer</button>
+                <div class="gift-form-row">
+                    <input type="number" min="1" step="1" inputmode="numeric" placeholder="Montant en €" required>
+                    <button type="submit">Participer</button>
+                </div>
+                <textarea maxlength="280" rows="2" placeholder="Un petit mot pour les mariés (optionnel)"></textarea>
             </form>
             <p class="gift-feedback" data-role="feedback"></p>
         `;
@@ -110,13 +115,15 @@ function updateCard(giftId, raised) {
 
 function wireForm(card, gift) {
     const form = card.querySelector('[data-role="form"]');
-    const input = form.querySelector("input");
+    const input = form.querySelector('input[type="number"]');
+    const messageEl = form.querySelector("textarea");
     const button = form.querySelector("button");
     const feedback = card.querySelector('[data-role="feedback"]');
 
     form.addEventListener("submit", async (e) => {
         e.preventDefault();
         const amount = Math.floor(Number(input.value));
+        const message = messageEl.value.trim().slice(0, 280);
 
         feedback.textContent = "";
         feedback.className = "gift-feedback";
@@ -129,13 +136,14 @@ function wireForm(card, gift) {
 
         button.disabled = true;
         try {
-            await contribute(gift.id, amount);
+            await contribute(gift.id, amount, message);
             input.value = "";
+            messageEl.value = "";
             feedback.textContent = "Merci pour votre participation \u2728";
             feedback.className = "gift-feedback ok";
         } catch (err) {
             console.error(err);
-            feedback.textContent = `Oups, la contribution n'a pas pu être enregistrée. Réessayez dans un instant.\nErreur : ${err instanceof Error ? err.message : String(err)}`;
+            feedback.textContent = "Oups, la contribution n'a pas pu être enregistrée. Réessayez dans un instant.";
             feedback.className = "gift-feedback err";
         } finally {
             button.disabled = false;
@@ -145,12 +153,18 @@ function wireForm(card, gift) {
 
 let db;
 
-async function contribute(giftId, amount) {
+async function contribute(giftId, amount, message) {
     const ref = doc(db, "cadeaux", giftId);
+    const entryRef = doc(collection(db, "cadeaux", giftId, "contributions"));
     await runTransaction(db, async (tx) => {
         const snap = await tx.get(ref);
         const current = snap.exists() ? (snap.data().raised || 0) : 0;
         tx.set(ref, { raised: current + amount }, { merge: true });
+        tx.set(entryRef, {
+            amount,
+            message: message || "",
+            createdAt: serverTimestamp()
+        });
     });
 }
 
