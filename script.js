@@ -39,6 +39,13 @@ const GIFTS = [
         desc: "De quoi équiper la cuisine pour de bon.",
         target: 300
     }
+    {
+        id: "rdv-dentiste",
+        name: "Rdv dentiste pour Romain",
+        desc: "De quoi avoir des jolis dents ",
+        target: 3000000
+    }
+     
 ];
 
 // ============================================================
