@@ -38,6 +38,24 @@ const GIFTS = [
         name: "Ustensiles de cuisine",
         desc: "De quoi équiper la cuisine pour de bon.",
         target: 300
+    },
+    {
+        id: "epices",
+        name: "Des épices de bonne qualité",
+        desc: "De quoi équiper cuisiner et recevoir.",
+        target: 100
+    },
+    {
+        id: "rdv-dentiste",
+        name: "Rdv dentiste pour Romain",
+        desc: "De quoi avoir des jolis dents ",
+        target: 3000000
+    },
+    {
+        id: "Pomme-aviron",
+        name: "Un aviron pour Pomme.",
+        desc: "Pour ramer dans la Garonne.",
+        target: 30000
     }
 ];
 
