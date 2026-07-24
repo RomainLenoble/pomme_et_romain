@@ -36,8 +36,8 @@ body {
     transform: translateX(-50%);
     z-index: 20;
     display: flex;
-    gap: 4px;
-    padding: 6px;
+    gap: 6px;
+    padding: 10px;
     background: var(--card-bg);
     backdrop-filter: blur(var(--card-blur));
     -webkit-backdrop-filter: blur(var(--card-blur));
@@ -47,10 +47,10 @@ body {
 }
 
 .site-nav-link {
-    padding: 8px 18px;
+    padding: 12px 24px;
     border-radius: 999px;
     font-family: var(--font-serif);
-    font-size: .92rem;
+    font-size: 1.25rem;
     letter-spacing: .03em;
     color: var(--ink);
     text-decoration: none;
@@ -67,8 +67,8 @@ body {
 }
 
 @media (max-width: 480px) {
-    .site-nav { top: 12px; gap: 2px; padding: 5px; }
-    .site-nav-link { padding: 7px 12px; font-size: .82rem; }
+    .site-nav { top: 12px; gap: 4px; padding: 8px; }
+    .site-nav-link { padding: 8px 14px; font-size: .9rem; }
 }
 
 /* ---------- scroll-snap pages ---------- */
@@ -90,7 +90,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 60px 24px;
+    padding: 100px 24px 60px;
     overflow: hidden;
 }
 
@@ -169,39 +169,6 @@ h1 .amp {
     color: #6b6558;
     font-size: 1rem;
     line-height: 1.8;
-}
-
-.scroll-cue {
-    position: absolute;
-    bottom: 34px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 6px;
-    color: #fff;
-    text-decoration: none;
-    font-size: .85rem;
-    letter-spacing: .1em;
-    text-transform: uppercase;
-    opacity: .9;
-    animation: bob 2.4s ease-in-out infinite;
-}
-
-@keyframes bob {
-    0%, 100% { transform: translate(-50%, 0); }
-    50%      { transform: translate(-50%, 8px); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .scroll-cue { animation: none; }
-    .scroller   { scroll-behavior: auto; }
-}
-
-.scroll-cue--dark {
-    color: var(--ink);
 }
 
 /* ---------- cadeaux page ---------- */
@@ -397,7 +364,7 @@ h1 .amp {
        (barre d'adresse affichée). Le jeu n'est donc JAMAIS coupé,
        quel que soit le navigateur ou l'état de la barre d'adresse.
        (120px = padding vertical de .page : 60px en haut + 60px en bas.) */
-    height: calc(100vh - 120px);   /* repli navigateurs anciens */
+    height: calc(100vh - 160px);   /* repli navigateurs anciens */
     display: flex;
     flex-direction: column;
 }
