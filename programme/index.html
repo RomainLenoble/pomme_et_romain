@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programme — Pomme & Romain</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mea+Culpa&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../style.css">
+
+    <style>
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-image: url('../image/fair-part.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 100px 24px 40px;
+        }
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(31,45,58,.55) 0%, rgba(31,45,58,.38) 45%, rgba(31,45,58,.6) 100%);
+            z-index: 0;
+        }
+        .site-nav {
+            z-index: 20;
+        }
+        .programme-card {
+            position: relative;
+            z-index: 2;
+        }
+        .scroll-cue--dark {
+            position: relative;
+            z-index: 2;
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="site-nav" aria-label="Navigation du site">
+    <a href="../index.html" class="site-nav-link" data-target="accueil">Accueil</a>
+    <span class="site-nav-link active">Programme</span>
+    <a href="../liste-cadeaux/index.html" class="site-nav-link" data-target="cadeaux">Cadeaux</a>
+    <a href="../jeu/index.html" class="site-nav-link" data-target="jeu">Jeu</a>
+</nav>
+
+<div class="glass-card programme-card">
+    <p class="eyebrow">20 · 21 février 2027</p>
+    <h2>Programme du week-end</h2>
+
+    <div class="timeline">
+
+        <h3 class="day">Jeudi 18 février</h3>
+        <div class="event">
+            <div class="node"><span class="node-time"></span></div>
+            <div class="event-body">
+                <h4>Mariage civil</h4>
+            </div>
+        </div>
+
+        <h3 class="day">Vendredi 19 février</h3>
+        <div class="event">
+            <div class="node"><span class="node-time">Journée</span></div>
+            <div class="event-body">
+                <h4>Journée neige — balade &amp; pique-nique</h4>
+                <p>Départ à 11h depuis le domaine nordique de Féclaz — à ski ou en raquettes, au choix. Chacun apporte son pique-nique&nbsp;!</p>
+                <p>Tenue conseillée&nbsp;: équipement de type jogging avec bonnet, plus quelques affaires chaudes en plus pour la pause pique-nique.</p>
+                <p>Location de skis de fond ou de raquettes, ainsi que les forfaits, chez Féclaz Sports ou directement au départ du domaine nordique <em>(plan / coordonnées GPS à venir)</em>.</p>
+            </div>
+        </div>
+        <div class="event">
+            <div class="node"><span class="node-time">Après-midi</span></div>
+            <div class="event-body">
+                <h4>Aide à l'installation au Fort de Barraux</h4>
+                <p>Toutes les grandes et petites mains sont les bienvenues pour une ou deux heures de préparation de la salle&nbsp;: montage du barnum, préparation des WC, installation des tables et des chaises, mise en place des lumières, de la sono et de la déco. Idéal pour délasser les muscles&nbsp;!</p>
+            </div>
+        </div>
+
+        <h3 class="day">Samedi 20 février</h3>
+        <div class="event">
+            <div class="node"><span class="node-time">10h30</span></div>
+            <div class="event-body">
+                <h4>Cérémonie</h4>
+                <p>À l'Église Saint-Martin de Barraux.</p>
+            </div>
+        </div>
+        <div class="event">
+            <div class="node"><span class="node-time">11h30</span></div>
+            <div class="event-body">
+                <h4>Marche &amp; vin d'honneur</h4>
+                <p>Marche vers le Fort de Barraux (15 min), puis vin d'honneur.</p>
+            </div>
+        </div>
+        <div class="event">
+            <div class="node"><span class="node-time">12h00</span></div>
+            <div class="event-body">
+                <h4>Photos</h4>
+                <p>Fort Barraux</p>
+            </div>
+        </div>
+        <div class="event">
+            <div class="node"><span class="node-time">13h00</span></div>
+            <div class="event-body">
+                <h4>Repas</h4>
+                <p>Repas placé.</p>
+            </div>
+        </div>
+        <div class="event">
+            <div class="node"><span class="node-time">14h30</span></div>
+            <div class="event-body">
+                <h4>Après-midi festive</h4>
+                <p>Animations dansantes, jeux et bonne humeur.</p>
+            </div>
+        </div>
+
+        <div class="event">
+            <div class="node"><span class="node-time">19h30</span></div>
+            <div class="event-body">
+                <h4>Repas crêpes</h4>
+            </div>
+        </div>
+
+        <h3 class="day">Dimanche 21 février</h3>
+        <div class="event">
+            <div class="node"><span class="node-time">10h30</span></div>
+            <div class="event-body">
+                <h4>Messe </h4>
+                <p>Quelque part</p>
+            </div>
+        </div>
+        <div class="event">
+            <div class="node"><span class="node-time">11h30</span></div>
+            <div class="event-body">
+                <h4>Retour de noce</h4>
+                <p>Fort de Barraux.</p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<a href="../liste-cadeaux/index.html" class="scroll-cue scroll-cue--dark" aria-label="Voir la liste de mariage">
+    <span>Liste de mariage</span>
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.4">
+        <path d="M12 4v15M6 13l6 6 6-6"/>
+    </svg>
+</a>
+
+</body>
+</html>

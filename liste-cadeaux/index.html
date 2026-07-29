@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste de mariage — Pomme & Romain</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mea+Culpa&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../style.css">
+
+    <style>
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-image: url('../image/fair-part.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            /* Top margin increased so the content clears the nav */
+            padding: 96px 24px 60px;
+        }
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(31,45,58,.55) 0%, rgba(31,45,58,.38) 45%, rgba(31,45,58,.6) 100%);
+            z-index: 0;
+        }
+        .site-nav {
+            z-index: 20;
+        }
+        .cadeaux-card {
+            position: relative;
+            z-index: 2;
+        }
+        .scroll-cue--dark {
+            position: relative;
+            z-index: 2;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="site-nav" aria-label="Navigation du site">
+    <a href="../index.html" class="site-nav-link" data-target="accueil">Accueil</a>
+    <a href="../programme/index.html" class="site-nav-link" data-target="programme">Programme</a>
+    <span class="site-nav-link active">Cadeaux</span>
+    <a href="../jeu/index.html" class="site-nav-link" data-target="jeu">Jeu</a>
+</nav>
+
+<div class="glass-card cadeaux-card">
+    <p class="eyebrow">Liste de mariage</p>
+    <h2>Une envie de nous gâter&nbsp;?</h2>
+    <p class="cadeaux-intro">
+        Plutôt que des cadeaux "classiques", nous vous proposons de participer,
+        à la hauteur de ce que vous souhaitez, aux projets qui nous tiennent à cœur.
+        Chaque contribution reste anonyme (sauf si vous laissez un petit message ! :)).
+    </p>
+
+    <div class="gift-list" id="gift-list">
+        <p class="gift-status">Chargement de la liste&hellip;</p>
+    </div>
+</div>
+
+<a href="../jeu/index.html" class="scroll-cue scroll-cue--dark" aria-label="Aller au jeu">
+    <span>Le jeu</span>
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.4">
+        <path d="M12 4v15M6 13l6 6 6-6"/>
+    </svg>
+</a>
+
+<script type="module" src="../script.js"></script>
+
+</body>
+</html>

@@ -14,10 +14,10 @@
 <body>
 
 <nav class="site-nav" aria-label="Navigation du site">
-    <a href="#accueil" class="site-nav-link" data-target="accueil">Accueil</a>
-    <a href="#programme" class="site-nav-link" data-target="programme">Programme</a>
-    <a href="#cadeaux" class="site-nav-link" data-target="cadeaux">Cadeaux</a>
-    <a href="#jeu" class="site-nav-link" data-target="jeu">Jeu</a>
+    <a href="#accueil" class="site-nav-link active" data-target="accueil">Accueil</a>
+    <a href="programme/index.html" class="site-nav-link" data-target="programme">Programme</a>
+    <a href="liste-cadeaux/index.html" class="site-nav-link" data-target="cadeaux">Cadeaux</a>
+    <a href="jeu/index.html" class="site-nav-link" data-target="jeu">Jeu</a>
 </nav>
 
 <main class="scroller">
@@ -38,155 +38,12 @@
             </p>
         </div>
 
-        <a href="#programme" class="scroll-cue" aria-label="Découvrir le programme">
+        <a href="programme/index.html" class="scroll-cue" aria-label="Découvrir le programme">
             <span>Le programme</span>
             <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.4">
                 <path d="M12 4v15M6 13l6 6 6-6"/>
             </svg>
         </a>
-    </section>
-
-    <!-- PAGE 2 — PROGRAMME -->
-    <section class="page programme-page" id="programme">
-        <div class="bg" style="background-image:url('image/fair-part.png')"></div>
-        <div class="bg-veil bg-veil--light"></div>
-
-        <div class="glass-card programme-card">
-            <p class="eyebrow">20 · 21 février 2027</p>
-            <h2>Programme du week-end</h2>
-
-            <div class="timeline">
-
-                <h3 class="day">Jeudi 18 février</h3>
-                <div class="event">
-                    <div class="node"><span class="node-time">Journée</span></div>
-                    <div class="event-body">
-                        <h4>Marriage civil </h4>
-                        <p> Mairie de Chambéry </p>
-                    </div>
-                </div>
-                
-                <h3 class="day">Vendredi 19 février</h3>
-                <div class="event">
-                    <div class="node"><span class="node-time">Journée</span></div>
-                    <div class="event-body">
-                        <h4>Sortie ski de fond au Revard</h4>
-                        <p>Pour celles et ceux qui le souhaitent, nous vous proposons une sortie en ski de fond pour bien commencer le week-end.</p>
-                    </div>
-                </div>
-
-                <h3 class="day">Samedi 20 février</h3>
-                <div class="event">
-                    <div class="node"><span class="node-time">10h30</span></div>
-                    <div class="event-body">
-                        <h4>Cérémonie</h4>
-                        <p>À l'Église Saint-Martin de Barraux.</p>
-                    </div>
-                </div>
-                <div class="event">
-                    <div class="node"><span class="node-time">11h30</span></div>
-                    <div class="event-body">
-                        <h4>Marche &amp; vin d'honneur</h4>
-                        <p>Marche vers le Fort de Barraux (15 min), puis vin d'honneur.</p>
-                    </div>
-                </div>
-                <div class="event">
-                    <div class="node"><span class="node-time">12h00</span></div>
-                    <div class="event-body">
-                        <h4>Photos</h4>
-                        <p>Fort Barraux</p>
-                    </div>
-                </div>
-                <div class="event">
-                    <div class="node"><span class="node-time">13h00</span></div>
-                    <div class="event-body">
-                        <h4>Repas</h4>
-                        <p>Repas placé.</p>
-                    </div>
-                </div>
-                <div class="event">
-                    <div class="node"><span class="node-time">14h30</span></div>
-                    <div class="event-body">
-                        <h4>Après-midi festive</h4>
-                        <p>Animations dansantes, jeux et bonne humeur.</p>
-                    </div>
-                </div>
-
-                <div class="event">
-                    <div class="node"><span class="node-time">19h30</span></div>
-                    <div class="event-body">
-                        <h4>Repas crêpes</h4>
-                    </div>
-                </div>
-
-                <h3 class="day">Dimanche 21 février</h3>
-                <div class="event">
-                    <div class="node"><span class="node-time">10h30</span></div>
-                    <div class="event-body">
-                        <h4>Messe </h4>
-                        <p>Quelque part</p>
-                    </div>
-                </div>
-                <div class="event">
-                    <div class="node"><span class="node-time">11h30</span></div>
-                    <div class="event-body">
-                        <h4>Retour de noce</h4>
-                        <p>Fort de Barraux.</p>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-
-        <a href="#cadeaux" class="scroll-cue scroll-cue--dark" aria-label="Voir la liste de mariage">
-            <span>Liste de mariage</span>
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.4">
-                <path d="M12 4v15M6 13l6 6 6-6"/>
-            </svg>
-        </a>
-    </section>
-
-    <!-- PAGE 3 — CADEAUX -->
-    <section class="page cadeaux-page" id="cadeaux">
-        <div class="bg" style="background-image:url('image/fair-part.png')"></div>
-        <div class="bg-veil"></div>
-
-        <div class="glass-card cadeaux-card">
-            <p class="eyebrow">Liste de mariage</p>
-            <h2>Une envie de nous gâter&nbsp;?</h2>
-            <p class="cadeaux-intro">
-                Plutôt que des cadeaux "classiques", nous vous proposons de participer,
-                à la hauteur de ce que vous souhaitez, aux projets qui nous tiennent à cœur.
-                Chaque contribution reste anonyme (sauf si vous laissez un petit message ! :)).
-            </p>
-
-            <div class="gift-list" id="gift-list">
-                <p class="gift-status">Chargement de la liste&hellip;</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- PAGE 4 — JEU -->
-    <section class="page game-page" id="jeu">
-        <div class="bg" style="background-image:url('image/fair-part.png')"></div>
-        <div class="bg-veil"></div>
-
-        <div class="glass-card game-card">
-            <!-- <p class="eyebrow">Une petite pause</p> -->
-            <!-- <h2>Romain animé</h2> -->
-            <p class="game-intro">
-                En attendant le grand jour, un petit jeu pour patienter&nbsp;:
-                déplacez Romain et attrapez les pommes qui tombent&nbsp;!
-            </p>
-            <div class="game-frame-wrap">
-                <iframe
-                    src="game/game.html"
-                    class="game-frame"
-                    title="Mini-jeu — Romain animé"
-                    loading="lazy"
-                ></iframe>
-            </div>
-        </div>
     </section>
 
 </main>
