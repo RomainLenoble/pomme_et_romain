@@ -21,42 +21,37 @@ const firebaseConfig = {
 };
 
 const GIFTS = [
-    {
-        id: "velo",
-        name: "Vélo de route pour Romain",
-        desc: "Pour remplacer le vieux vélo qui prend la poussière depuis trois ans.",
-        target: 500
-    },
+
     {
         id: "lune-de-miel",
-        name: "Cagnotte lune de miel",
+        name: "Cagnotte voyage de noces",
         desc: "Un petit coup de pouce pour notre voyage de noces.",
         target: null
     },
     {
-        id: "cuisine",
-        name: "Ustensiles de cuisine",
-        desc: "De quoi équiper la cuisine pour de bon.",
+        id: "velo",
+        name: "Vélo éléctrique et remorque",
+        desc: "Pour faire de grosses courses en ville.",
+        target: 5000
+    },
+    {
+        id: "krampouz",
+        name: "Crépière Krampouz",
+        desc: "Pour vous régaler à la façon bretonne.",
         target: 300
     },
     {
-        id: "epices",
-        name: "Des épices de bonne qualité",
-        desc: "De quoi équiper cuisiner et recevoir.",
-        target: 100
+        id: "son",
+        name: "Systeme son et abonnement musique.",
+        desc: "Pour réveiller les voisins.",
+        target: 300
     },
     {
-        id: "rdv-dentiste",
-        name: "Rdv dentiste pour Romain",
-        desc: "De quoi avoir des jolis dents ",
-        target: 3000000
+        id: "stage-mer",
+        name: "Stage mer",
+        desc: "pour faire une croisière ensemble.",
+        target: 1500
     },
-    {
-        id: "Pomme-aviron",
-        name: "Un aviron pour Pomme.",
-        desc: "Pour ramer dans la Garonne.",
-        target: 30000
-    }
 ];
 
 // ============================================================
