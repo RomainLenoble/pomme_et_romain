@@ -78,7 +78,7 @@
                 <div class="info-block">
                     <span class="info-icon" aria-hidden="true">🥂</span>
                     <div class="info-body">
-                        <h3>Vin d'honneur &amp; Déjeuner</h3>
+                        <h3>Vin d'honneur &amp; Dîner</h3>
                         <p>
                             <a class="info-link" href="https://www.google.com/maps/search/?api=1&query=45.4354507,5.9875743" target="_blank" rel="noopener">
                                 Fort Barraux
@@ -90,6 +90,12 @@
                 </div>
 
             </div>
+
+            <h3 class="infos-subheading">Les lieux du week-end</h3>
+            <div id="weekend-map" class="weekend-map" role="img" aria-label="Carte des lieux du week-end : Église Saint-Martin de Barraux, Fort Barraux, départ du domaine nordique de Féclaz"></div>
+            <p class="infos-note">
+                🚗 Nous vous conseillons de vous garer directement au <strong>Fort Barraux</strong> — l'église Saint-Martin se trouve à 15&nbsp;minutes à pied.
+            </p>
 
             <div class="infos-grid infos-grid--practical">
 
@@ -113,10 +119,7 @@
                     <span class="info-icon" aria-hidden="true">🅿️</span>
                     <div class="info-body">
                         <h3>Parking</h3>
-                        <p>Directement au Fort Barraux — Possibilité de se garer à proximitée de l'église.</p>
-                        <p class="infos-note infos-note--tight">
-                            L'église Saint-Martin se trouve à 15&nbsp;minutes à pied du Fort Barraux.
-                        </p>
+                        <p>Directement au Fort Barraux — voir la carte de stationnement sur la page Programme.</p>
                     </div>
                 </div>
 
@@ -130,19 +133,11 @@
 
             </div>
 
-            <h3 class="infos-subheading">Les lieux du week-end</h3>
-            <div id="weekend-map" class="weekend-map weekend-map--square" role="img" aria-label="Carte des lieux du week-end : Église Saint-Martin de Barraux, Fort Barraux, départ du domaine nordique de Féclaz"></div>
-            <ul class="weekend-map-legend">
-                <li><span class="legend-swatch" aria-hidden="true">⛪️</span> Église Saint-Martin</li>
-                <li><span class="legend-swatch" aria-hidden="true">🥂</span> Fort Barraux</li>
-                <li><span class="legend-swatch" aria-hidden="true">🎿</span> Domaine nordique de Féclaz</li>
-            </ul>
-
             <div class="info-block info-block--contact">
                 <span class="info-icon" aria-hidden="true">✉️</span>
                 <div class="info-body">
                     <h3>Contact</h3>
-                    <p class="infos-placeholder">pomme.hirschauer@gmail.com ou romain.lenoble@proton.me</p>
+                    <p class="infos-placeholder">Une adresse pour nous écrire sera ajoutée prochainement.</p>
                 </div>
             </div>
 
@@ -167,52 +162,31 @@
         if (!mapEl || typeof L === "undefined") return;
 
         var places = [
-            { name: "Église Saint-Martin de Barraux", detail: "Cérémonie — samedi 10h30", lat: 45.4353, lng: 5.9783, icon: "⛪️" },
-            { name: "Fort Barraux",                    detail: "Vin d'honneur & déjeuner — samedi 12h00", lat: 45.4354507, lng: 5.9875743, icon: "🥂", label: "Barraux" },
-            { name: "Domaine nordique de Féclaz",       detail: "Départ balade & pique-nique — vendredi 10h30", lat: 45.647515, lng: 5.9855204, icon: "🎿", label: "La Féclaz" }
+            { name: "Église Saint-Martin de Barraux", detail: "Célébration — samedi 10h30", lat: 45.4353, lng: 5.9783, icon: "⛪️" },
+            { name: "Fort Barraux",                    detail: "Vin d'honneur & dîner — samedi 12h00", lat: 45.4354507, lng: 5.9875743, icon: "🥂" },
+            { name: "Domaine nordique de Féclaz",       detail: "Départ balade & pique-nique — vendredi 10h30", lat: 45.647515, lng: 5.9855204, icon: "🎿" }
         ];
 
         var map = L.map(mapEl, { scrollWheelZoom: false });
-        // L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
-        //     maxZoom: 19,
-        //     subdomains: "abcd",
-        //     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
-        L.tileLayer("https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png", {
-            maxZoom: 19,
-            subdomains: "abcd",
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
-        // L.tileLayer("https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png", {
-            // maxZoom: 17,
-            // subdomains: "abc",
-            // attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="https://opentopomap.org">OpenTopoMap</a> (CC-BY-SA)'
+        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+            maxZoom: 18,
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
 
-        
         var markers = places.map(function (p) {
             var icon = L.divIcon({
-                html: '<span style="font-size:24px;line-height:1;">' + p.icon + '</span>',
+                html: '<span style="font-size:22px;line-height:1;">' + p.icon + '</span>',
                 className: "weekend-map-icon",
-                iconSize: [32, 32],
-                iconAnchor: [16, 16]
+                iconSize: [30, 30],
+                iconAnchor: [15, 15]
             });
-            var marker = L.marker([p.lat, p.lng], { icon: icon })
+            return L.marker([p.lat, p.lng], { icon: icon })
                 .addTo(map)
                 .bindPopup("<strong>" + p.name + "</strong><br>" + p.detail);
-
-            if (p.label) {
-                marker.bindTooltip(p.label, {
-                    permanent: true,
-                    direction: "top",
-                    offset: [0, -14],
-                    className: "weekend-map-label"
-                });
-            }
-
-            return marker;
         });
 
         var group = L.featureGroup(markers);
-        map.fitBounds(group.getBounds(), { padding: [40, 40] });
+        map.fitBounds(group.getBounds(), { padding: [30, 30] });
     });
 </script>
 

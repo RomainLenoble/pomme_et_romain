@@ -419,6 +419,248 @@ h1 .amp {
     .game-card { padding: 40px 20px 32px; }
 }
 
+/* ---------- infos pratiques page ---------- */
+
+.infos-card {
+    max-width: 1375px;
+    padding: 80px 75px 72px;
+}
+
+.infos-page h2 {
+    font-family: var(--font-script);
+    font-weight: 400;
+    font-size: 2.6rem;
+    color: var(--ink);
+    margin-bottom: 34px;
+}
+
+.infos-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 28px;
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+@media (min-width: 640px) {
+    .infos-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.info-block {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.info-icon {
+    font-size: 2.2rem;
+    line-height: 1;
+    margin-top: 2px;
+}
+
+.info-body h3 {
+    font-family: var(--font-serif);
+    font-weight: 600;
+    font-style: italic;
+    font-size: 1.3rem;
+    color: var(--gold);
+    margin-bottom: 8px;
+}
+
+.info-body p {
+    color: #6b6558;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.info-link {
+    font-weight: 600;
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--gold-soft);
+}
+
+.info-link:hover {
+    color: var(--gold);
+}
+
+.info-time {
+    margin-top: 8px;
+    font-weight: 600;
+    color: var(--pine);
+    font-size: .95rem;
+}
+
+.infos-note {
+    text-align: left;
+    color: #6b6558;
+    font-size: .98rem;
+    line-height: 1.6;
+    margin-top: 18px;
+}
+
+.infos-cta {
+    display: inline-block;
+    margin-top: 30px;
+    font-family: var(--font-serif);
+    font-weight: 600;
+    color: var(--pine);
+    text-decoration: none;
+    border-bottom: 1px solid var(--gold-soft);
+}
+
+.infos-cta:hover {
+    color: var(--gold);
+}
+
+.infos-subheading {
+    font-family: var(--font-serif);
+    font-weight: 600;
+    font-style: italic;
+    font-size: 1.3rem;
+    color: var(--gold);
+    text-align: left;
+    margin: 6px 0 14px;
+}
+
+.weekend-map {
+    width: 100%;
+    height: 280px;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid var(--gold-soft);
+    box-shadow: 0 10px 26px rgba(20, 28, 38, .15);
+    background: #eee;
+}
+
+.weekend-map--square {
+    width: 100%;
+    max-width: 620px;
+    aspect-ratio: 1 / 1;
+    height: auto;
+    margin: 0 auto;
+}
+
+.weekend-map-icon {
+    background: transparent;
+    border: none;
+    text-align: center;
+    filter: drop-shadow(0 2px 4px rgba(20,28,38,.35));
+}
+
+/* permanent on-map labels */
+.weekend-map-label {
+    background: var(--ink);
+    color: var(--ivory);
+    border: none;
+    border-radius: 999px;
+    padding: 4px 12px;
+    font-family: var(--font-serif);
+    font-weight: 600;
+    font-size: .82rem;
+    letter-spacing: .02em;
+    box-shadow: 0 3px 10px rgba(20, 28, 38, .35);
+}
+
+.weekend-map-label::before {
+    border-top-color: var(--ink);
+}
+
+/* map legend */
+.weekend-map-legend {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 14px 0 0;
+}
+
+.weekend-map-legend li {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--pine);
+    color: var(--ivory);
+    border-radius: 999px;
+    padding: 6px 16px 6px 10px;
+    font-size: .88rem;
+    font-weight: 600;
+}
+
+.legend-swatch {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--ivory);
+    font-size: 1rem;
+}
+
+.infos-grid--practical {
+    margin-top: 30px;
+}
+
+.infos-grid--after-map {
+    margin-top: 26px;
+}
+
+.info-block--contact {
+    margin-top: 30px;
+    padding-top: 22px;
+    border-top: 1px solid var(--gold-soft);
+}
+
+.infos-note--tight {
+    margin-top: 10px;
+    font-size: .92rem;
+}
+
+.infos-placeholder {
+    font-style: italic;
+    color: #9a9384;
+}
+
+/* shared: embedded map used on infos + programme pages */
+
+.event-map {
+    margin-top: 14px;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid var(--gold-soft);
+    box-shadow: 0 10px 26px rgba(20, 28, 38, .15);
+}
+
+.event-map iframe {
+    display: block;
+    width: 100%;
+    height: 240px;
+    border: 0;
+}
+
+.event-map-link {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: .92rem;
+    font-weight: 600;
+    color: var(--pine);
+    text-decoration: none;
+    border-bottom: 1px solid var(--gold-soft);
+}
+
+.event-map-link:hover {
+    color: var(--gold);
+}
+
+@media (max-width: 540px) {
+    .infos-card { padding: 44px 22px 40px; }
+    .info-block { gap: 12px; }
+}
+
 /* ---------- programme page ---------- */
 
 .programme-card {
