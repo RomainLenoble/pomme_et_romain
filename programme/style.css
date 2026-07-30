@@ -8,7 +8,7 @@
     --card-blur:  14px;
 
     --font-script: "Mea Culpa", cursive;
-    --font-serif:  "Cormorant Garamond", Georgia, serif;
+    --font-serif:  "Lora", Georgia, serif;
 }
 
 * {
@@ -424,7 +424,6 @@ h1 .amp {
 .programme-card {
     max-width: 960px;
     padding: 72px 64px 60px;
-    font-family: "Lora", Georgia, serif;
 }
 
 .programme-card h2 {
