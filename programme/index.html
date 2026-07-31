@@ -11,41 +11,8 @@
 
     <link rel="stylesheet" href="style.css">
 
-    <style>
-        body {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            background-image: url('../image/fair-part.jpeg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            /* Top margin increased so the content clears the nav */
-            padding: 100px 24px 60px;
-        }
-        body::before {
-            content: "";
-            position: fixed;
-            inset: 0;
-            background: linear-gradient(180deg, rgba(31,45,58,.15) 0%, rgba(31,45,58,.10) 45%, rgba(31,45,58,.15) 100%);
-            z-index: 0;
-        }
-        .site-nav {
-            z-index: 20;
-        }
-        .programme-card {
-            position: relative;
-            z-index: 2;
-        }
-        .scroll-cue--dark {
-            position: relative;
-            z-index: 2;
-            margin-top: auto;
-        }
-    </style>
 </head>
-<body>
+<body class="prog-page">
 
 <nav class="site-nav" aria-label="Navigation du site">
     <a href="../index.html" class="site-nav-link" data-target="accueil">Accueil</a>
@@ -54,122 +21,150 @@
     <a href="../jeu/index.html" class="site-nav-link" data-target="jeu">Jeu</a>
 </nav>
 
-<div class="glass-card programme-card">
+<header class="prog-hero">
     <p class="eyebrow">20 · 21 février 2027</p>
     <h2>Programme du week-end</h2>
-
-    <div class="timeline">
-
-        <h3 class="day">Jeudi 18 février</h3>
-        <div class="event">
-            <div class="node"><span class="node-time"></span></div>
-            <div class="event-body">
-                <h4>Mariage civil</h4>
-            </div>
-        </div>
-
-        <h3 class="day">Vendredi 19 février</h3>
-        <div class="event">
-            <div class="node"><span class="node-time">Journée</span></div>
-            <div class="event-body">
-                <h4>Journée neige — balade &amp; pique-nique</h4>
-                <p><strong>Départ à 10h30 </strong> depuis le domaine nordique de Féclaz — à ski ou en raquettes, au choix. Forfait achetés, ski au pied et pique-nique dans le sac &nbsp;!</p>
-                <p><strong>Tenue conseillée</strong>&nbsp;: équipement de type jogging avec bonnet, plus quelques affaires chaudes en plus pour la pause pique-nique.</p>
-                <p><strong>Location de skis</strong> de fond ou de raquettes : chez Féclaz Sports.</p>
-                <p><strong>Forfait : </strong> au départ du domaine nordique.</p>
-
-                <div class="event-map">
-                    <iframe src="https://www.google.com/maps?q=45.647515,5.9855204&z=15&output=embed" loading="lazy" title="Départ domaine nordique de Féclaz" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-                <a class="event-map-link" href="https://www.google.com/maps/search/?api=1&query=45.647515,5.9855204" target="_blank" rel="noopener">📍 Ouvrir dans Google Maps</a>
-            </div>
-        </div>
-        <div class="event">
-            <div class="node"><span class="node-time">16h</span></div>
-            <div class="event-body">
-                <h4>Aide à l'installation au Fort de Barraux</h4>
-                <p>Toutes les grandes et petites mains sont les bienvenues pour une ou deux heures de préparation de la salle&nbsp;: montage du barnum, préparation des WC, installation des tables et des chaises, mise en place des lumières, de la sono et de la déco. Idéal pour délasser les muscles&nbsp;!</p>
-            </div>
-        </div>
-
-        <h3 class="day">Samedi 20 février</h3>
-        <div class="event">
-            <div class="node"><span class="node-time"></span></div>
-            <div class="event-body">
-                <h4>Pour cette journée, nous vous conseillons de vous garer directement au Fort Barraux. Il est situé à 15 min à pied de l'église Saint Martin.</h4>
-                <img src="../image/carte_barraux.png" alt="Carte de Barraux" style="max-width:100%;height:auto;margin-top:10px;">
-                <!-- <div class="event-map">
-                    <iframe src="https://www.google.com/maps?q=45.4354507,5.9875743&z=16&output=embed" loading="lazy" title="Fort de Barraux" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-                <a class="event-map-link" href="https://www.google.com/maps/search/?api=1&query=45.4354507,5.9875743" target="_blank" rel="noopener">📍 Ouvrir dans Google Maps</a> -->
-            </div>
-            <div class="node"><span class="node-time">10h30</span></div>
-            <div class="event-body">
-                <h4>Célébration</h4>
-                <p>À l'Église Saint-Martin de Barraux.</p>
-            </div>
-        </div>
-        <div class="event">
-            <div class="node"><span class="node-time">11h30</span></div>
-            <div class="event-body">
-                <h4>Migration vers le fort </h4>
-                <p>Pédestre pour les mariés (15 min).</p>
-            </div>
-        </div>
-        <div class="event">
-            <div class="node"><span class="node-time">12h00</span></div>
-            <div class="event-body">
-                <h4>Photos &amp; Vin d'honneur</h4>
-                <p>Fort Barraux</p>
-            </div>
-        </div>
-        <div class="event">
-            <div class="node"><span class="node-time">13h30</span></div>
-            <div class="event-body">
-                <h4>Déjeuner placé </h4>
-                <!-- <p>.</p> -->
-            </div>
-        </div>
-        <div class="event">
-            <div class="node"><span class="node-time">14h30</span></div>
-            <div class="event-body">
-                <h4>Après-midi festive</h4>
-                <p>Animations dansantes, jeux et bonne humeur.</p>
-            </div>
-        </div>
-
-        <div class="event">
-            <div class="node"><span class="node-time">19h30</span></div>
-            <div class="event-body">
-                <h4>Soirée crêpes</h4>
-            </div>
-        </div>
-
-        <h3 class="day">Dimanche 21 février</h3>
-        <div class="event">
-            <div class="node"><span class="node-time">Matin</span></div>
-            <div class="event-body">
-                <h4>Messe </h4>
-                <p>Quelque part</p>
-            </div>
-        </div>
-        <div class="event">
-            <div class="node"><span class="node-time">11h00</span></div>
-            <div class="event-body">
-                <h4>Retour de noce</h4>
-                <p>Fort Barraux.</p>
-            </div>
-        </div>
-
+    <div class="prog-hero-photo">
+        <img src="../image/fair-part.jpeg" alt="Pomme &amp; Romain">
     </div>
-</div>
+</header>
 
-<a href="../liste-cadeaux/index.html" class="scroll-cue scroll-cue--dark" aria-label="Voir la liste de mariage">
-    <span>Liste de mariage</span>
-    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.4">
-        <path d="M12 4v15M6 13l6 6 6-6"/>
-    </svg>
-</a>
+<main class="prog-timeline">
+
+    <section class="day-block">
+        <div class="day-block-inner">
+            <h3 class="day">Jeudi 18 février</h3>
+            <div class="timeline">
+                <div class="event">
+                    <div class="node"><span class="node-time"></span></div>
+                    <div class="event-body">
+                        <h4>Mariage civil</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="day-block">
+        <div class="day-block-inner">
+            <h3 class="day">Vendredi 19 février</h3>
+            <div class="timeline">
+                <div class="event">
+                    <div class="node"><span class="node-time">Journée</span></div>
+                    <div class="event-body">
+                        <h4>Journée neige — balade &amp; pique-nique</h4>
+                        <p><strong>Départ à 10h30 </strong> depuis le domaine nordique de Féclaz — à ski ou en raquettes, au choix. Forfait achetés, ski au pied et pique-nique dans le sac &nbsp;!</p>
+                        <p><strong>Tenue conseillée</strong>&nbsp;: équipement de type jogging avec bonnet, plus quelques affaires chaudes en plus pour la pause pique-nique.</p>
+                        <p><strong>Location de skis</strong> de fond ou de raquettes : chez Féclaz Sports.</p>
+                        <p><strong>Forfait : </strong> au départ du domaine nordique.</p>
+
+                        <div class="event-map">
+                            <iframe src="https://www.google.com/maps?q=45.647515,5.9855204&z=15&output=embed" loading="lazy" title="Départ domaine nordique de Féclaz" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                        <a class="event-map-link" href="https://www.google.com/maps/search/?api=1&query=45.647515,5.9855204" target="_blank" rel="noopener">📍 Ouvrir dans Google Maps</a>
+                    </div>
+                </div>
+                <div class="event">
+                    <div class="node"><span class="node-time">16h</span></div>
+                    <div class="event-body">
+                        <h4>Aide à l'installation au Fort de Barraux</h4>
+                        <p>Toutes les grandes et petites mains sont les bienvenues pour une ou deux heures de préparation de la salle&nbsp;: montage du barnum, préparation des WC, installation des tables et des chaises, mise en place des lumières, de la sono et de la déco. Idéal pour délasser les muscles&nbsp;!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="day-block">
+        <div class="day-block-inner day-block-inner--split">
+            <div class="timeline">
+                <h3 class="day">Samedi 20 février</h3>
+                <div class="event">
+                    <div class="node"><span class="node-time"></span></div>
+                    <div class="event-body">
+                        <h4>Où se garer</h4>
+                        <p>Nous vous conseillons de vous garer directement au Fort Barraux. Il est situé à 15 min à pied de l'église Saint-Martin — voir le plan ci-contre.</p>
+                    </div>
+                    <div class="node"><span class="node-time">10h30</span></div>
+                    <div class="event-body">
+                        <h4>Célébration</h4>
+                        <p>À l'Église Saint-Martin de Barraux.</p>
+                    </div>
+                </div>
+                <div class="event">
+                    <div class="node"><span class="node-time">11h30</span></div>
+                    <div class="event-body">
+                        <h4>Migration vers le fort </h4>
+                        <p>Pédestre pour les mariés (15 min).</p>
+                    </div>
+                </div>
+                <div class="event">
+                    <div class="node"><span class="node-time">12h00</span></div>
+                    <div class="event-body">
+                        <h4>Photos &amp; Vin d'honneur</h4>
+                        <p>Fort Barraux</p>
+                    </div>
+                </div>
+                <div class="event">
+                    <div class="node"><span class="node-time">13h30</span></div>
+                    <div class="event-body">
+                        <h4>Déjeuner placé </h4>
+                    </div>
+                </div>
+                <div class="event">
+                    <div class="node"><span class="node-time">14h30</span></div>
+                    <div class="event-body">
+                        <h4>Après-midi festive</h4>
+                        <p>Animations dansantes, jeux et bonne humeur.</p>
+                    </div>
+                </div>
+                <div class="event">
+                    <div class="node"><span class="node-time">19h30</span></div>
+                    <div class="event-body">
+                        <h4>Soirée crêpes</h4>
+                    </div>
+                </div>
+            </div>
+
+            <figure class="day-photo">
+                <img src="../image/carte_barraux.png" alt="Carte de Barraux">
+                <figcaption>Parking &amp; église — 15 min à pied du Fort Barraux</figcaption>
+            </figure>
+        </div>
+    </section>
+
+    <section class="day-block">
+        <div class="day-block-inner">
+            <h3 class="day">Dimanche 21 février</h3>
+            <div class="timeline">
+                <div class="event">
+                    <div class="node"><span class="node-time">Matin</span></div>
+                    <div class="event-body">
+                        <h4>Messe </h4>
+                        <p>Quelque part</p>
+                    </div>
+                </div>
+                <div class="event">
+                    <div class="node"><span class="node-time">11h00</span></div>
+                    <div class="event-body">
+                        <h4>Retour de noce</h4>
+                        <p>Fort Barraux.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<!-- <div class="prog-footer-cue">
+    <a href="../liste-cadeaux/index.html" class="scroll-cue" aria-label="Voir la liste de mariage">
+        <span>Liste de mariage</span>
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.4">
+            <path d="M12 4v15M6 13l6 6 6-6"/>
+        </svg>
+    </a>
+</div> -->
 
 </body>
 </html>

@@ -419,27 +419,118 @@ h1 .amp {
     .game-card { padding: 40px 20px 32px; }
 }
 
-/* ---------- programme page ---------- */
+/* ---------- programme page (full-width layout, no photo background) ---------- */
 
-.programme-card {
-    max-width: 960px;
-    padding: 72px 64px 60px;
+.prog-page {
+    background: var(--ivory);
 }
 
-.programme-card h2 {
+.prog-hero {
+    padding: 150px 24px 50px;
+    text-align: center;
+}
+
+.prog-hero .eyebrow {
+    margin-bottom: 8px;
+}
+
+.prog-hero h2 {
     font-family: var(--font-script);
     font-weight: 400;
-    font-size: 3.5rem;
+    font-size: 4rem;
+    line-height: 1;
     color: var(--ink);
-    margin-bottom: 6px;
+    margin-bottom: 34px;
 }
 
-.programme-card .eyebrow {
-    margin-bottom: 4px;
+.prog-hero-photo {
+    max-width: 1080px;
+    margin: 0 auto;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid var(--gold-soft);
+    box-shadow: 0 25px 60px rgba(20, 28, 38, .2);
 }
 
-.programme-card > .eyebrow + h2 {
-    margin-bottom: 40px;
+.prog-hero-photo img {
+    display: block;
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    object-position: center 30%;
+}
+
+.day-block {
+    padding: 60px 24px 64px;
+}
+
+.day-block:nth-of-type(even) {
+    background: rgba(182, 138, 82, .08);
+}
+
+.day-block-inner {
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+.day-block-inner--split {
+    display: grid;
+    grid-template-columns: 1.15fr .85fr;
+    gap: 8px 52px;
+    align-items: start;
+}
+
+.day-block-inner--split .timeline {
+    grid-column: 1;
+}
+
+.day-photo {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--gold-soft);
+    box-shadow: 0 15px 40px rgba(20, 28, 38, .18);
+    position: sticky;
+    top: 110px;
+}
+
+.day-photo img {
+    display: block;
+    width: 100%;
+}
+
+.day-photo figcaption {
+    padding: 12px 16px;
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: .92rem;
+    color: #6b6558;
+    background: #fff;
+}
+
+.prog-footer-cue {
+    padding: 10px 24px 70px;
+    text-align: center;
+}
+
+@media (max-width: 860px) {
+    .day-block-inner--split {
+        grid-template-columns: 1fr;
+    }
+    .day-photo {
+        grid-column: 1;
+        grid-row: auto;
+        position: static;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 540px) {
+    .prog-hero { padding: 118px 16px 34px; }
+    .prog-hero h2 { font-size: 2.6rem; margin-bottom: 24px; }
+    .prog-hero-photo img { height: 220px; }
+    .day-block { padding: 42px 16px 48px; }
 }
 
 .day {
@@ -555,7 +646,6 @@ h1 .amp {
 @media (max-width: 540px) {
     h1 { font-size: 3.4rem; }
     .glass-card { padding: 40px 26px; }
-    .programme-card { padding: 44px 22px 36px; }
     .event { grid-template-columns: 64px 1px 1fr; column-gap: 14px; }
     .event::before { left: 74px; }
     .cadeaux-card { padding: 44px 22px 40px; }
