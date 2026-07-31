@@ -95,7 +95,7 @@ function renderSkeleton() {
                     <input type="number" min="1" step="1" inputmode="numeric" placeholder="Montant en €" required>
                     <button type="submit">Participer</button>
                 </div>
-                <textarea maxlength="1000" rows="2" placeholder="Un petit mot pour les mariés (obligatoire)" required></textarea>
+                <textarea maxlength="1000" rows="4" placeholder="Un petit mot pour les mariés. " required></textarea>
             </form>
             <p class="gift-feedback" data-role="feedback"></p>
         `;
