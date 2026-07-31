@@ -9,39 +9,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mea+Culpa&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="style.css">
 
-    <style>
-        body {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            background-image: url('../image/fair-part.jpeg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            /* Top margin increased so the content clears the nav */
-            padding: 96px 24px 60px;
-        }
-        body::before {
-            content: "";
-            position: fixed;
-            inset: 0;
-            background: linear-gradient(180deg, rgba(31,45,58,.55) 0%, rgba(31,45,58,.38) 45%, rgba(31,45,58,.6) 100%);
-            z-index: 0;
-        }
-        .site-nav {
-            z-index: 20;
-        }
-        .game-card {
-            position: relative;
-            z-index: 2;
-        }
-    </style>
 </head>
-<body>
+<body class="prog-page">
 
 <nav class="site-nav" aria-label="Navigation du site">
     <a href="../index.html" class="site-nav-link" data-target="accueil">Accueil</a>
@@ -50,20 +21,26 @@
     <span class="site-nav-link active">Jeu</span>
 </nav>
 
-<div class="glass-card game-card">
-    <p class="game-intro">
-        En attendant le grand jour, un petit jeu pour patienter&nbsp;:
-        déplacez Romain et attrapez les pommes qui tombent&nbsp;!
-    </p>
-    <div class="game-frame-wrap">
-        <iframe
-            src="../game/game.html"
-            class="game-frame"
-            title="Mini-jeu — Romain animé"
-            loading="lazy"
-        ></iframe>
+<header class="prog-hero">
+    <p class="eyebrow">En attendant le grand jour</p>
+</header>
+
+<main class="game-layout">
+    <div class="game-card">
+        <p class="game-intro">
+            Un petit jeu pour patienter&nbsp;: déplacez Romain et attrapez les
+            pommes qui tombent&nbsp;!
+        </p>
+        <div class="game-frame-wrap">
+            <iframe
+                src="../game/game.html"
+                class="game-frame"
+                title="Mini-jeu — Romain animé"
+                loading="lazy"
+            ></iframe>
+        </div>
     </div>
-</div>
+</main>
 
 </body>
 </html>
