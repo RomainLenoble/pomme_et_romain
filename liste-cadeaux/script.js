@@ -95,7 +95,7 @@ function renderSkeleton() {
                     <input type="number" min="1" step="1" inputmode="numeric" placeholder="Montant en €" required>
                     <button type="submit">Participer</button>
                 </div>
-                <textarea maxlength="1000" rows="2" placeholder="Un petit mot pour les mariés (optionnel)"></textarea>
+                <textarea maxlength="1000" rows="2" placeholder="Un petit mot pour les mariés (obligatoire)" required></textarea>
             </form>
             <p class="gift-feedback" data-role="feedback"></p>
         `;
@@ -136,6 +136,12 @@ function wireForm(card, gift) {
 
         if (!amount || amount <= 0) {
             feedback.textContent = "Merci d'indiquer un montant valide.";
+            feedback.className = "gift-feedback err";
+            return;
+        }
+
+        if (!message) {
+            feedback.textContent = "Merci d'ajouter un petit mot : c'est obligatoire pour participer !";
             feedback.className = "gift-feedback err";
             return;
         }

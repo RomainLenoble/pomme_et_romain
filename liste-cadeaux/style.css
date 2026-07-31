@@ -1,0 +1,736 @@
+:root {
+    --ink:        #1f2d3a;
+    --ivory:      #faf6ef;
+    --gold:       #b68a52;
+    --gold-soft:  #d9bd91;
+    --pine:       #46574a;
+    --card-bg:    rgba(255, 255, 255, 0.82);
+    --card-blur:  14px;
+
+    --font-script: "Mea Culpa", cursive;
+    --font-serif:  "Lora", Georgia, serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: var(--font-serif);
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- top navigation ---------- */
+
+.site-nav {
+    position: fixed;
+    top: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 20;
+    display: flex;
+    gap: 6px;
+    padding: 10px;
+    background: var(--card-bg);
+    backdrop-filter: blur(var(--card-blur));
+    -webkit-backdrop-filter: blur(var(--card-blur));
+    border: 1px solid rgba(255,255,255,.5);
+    border-radius: 999px;
+    box-shadow: 0 10px 30px rgba(20, 28, 38, .18);
+}
+
+.site-nav-link {
+    padding: 12px 24px;
+    border-radius: 999px;
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    letter-spacing: .03em;
+    color: var(--ink);
+    text-decoration: none;
+    transition: background .2s ease, color .2s ease;
+}
+
+.site-nav-link:hover {
+    background: rgba(182, 138, 82, .12);
+}
+
+.site-nav-link.active {
+    background: var(--pine);
+    color: var(--ivory);
+}
+
+@media (max-width: 480px) {
+    .site-nav { top: 12px; gap: 4px; padding: 8px; }
+    .site-nav-link { padding: 8px 14px; font-size: .9rem; }
+}
+
+/* ---------- scroll-snap pages ---------- */
+
+.scroller {
+    height: 100vh;   /* repli navigateurs anciens */
+    height: 100dvh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+}
+
+.page {
+    position: relative;
+    min-height: 100vh;   /* repli navigateurs anciens */
+    min-height: 100dvh;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 24px 60px;
+    overflow: hidden;
+}
+
+.bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    z-index: 0;
+}
+
+.bg-veil {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(31,45,58,.03) 0%, rgba(31,45,58,.02) 45%, rgba(31,45,58,.03) 100%);
+    z-index: 1;
+}
+
+.bg-veil--light {
+    background: linear-gradient(180deg, rgba(250,246,239,.6) 0%, rgba(250,246,239,.5) 100%);
+}
+
+/* ---------- glass card ---------- */
+
+.glass-card {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 620px;
+    background: var(--card-bg);
+    backdrop-filter: blur(var(--card-blur));
+    -webkit-backdrop-filter: blur(var(--card-blur));
+    border: 1px solid rgba(255,255,255,.5);
+    border-radius: 22px;
+    box-shadow: 0 25px 60px rgba(20, 28, 38, .25);
+    padding: 56px 44px;
+    text-align: center;
+}
+
+/* ---------- hero page ---------- */
+
+.eyebrow {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 1rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 18px;
+}
+
+h1 {
+    font-family: var(--font-script);
+    font-weight: 400;
+    font-size: 5rem;
+    line-height: 1;
+    color: var(--ink);
+}
+
+h1 .amp {
+    color: var(--gold);
+    font-size: .8em;
+    margin: 0 6px;
+}
+
+.lede {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 1.5rem;
+    color: var(--pine);
+    margin: 18px 0 26px;
+}
+
+.small {
+    color: #6b6558;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+/* ---------- cadeaux page ---------- */
+
+.cadeaux-card {
+    max-width: 920px;
+    padding: 60px 46px 54px;
+}
+
+.cadeaux-page h2 {
+    font-family: var(--font-script);
+    font-weight: 400;
+    font-size: 2.6rem;
+    color: var(--ink);
+    margin-bottom: 20px;
+}
+
+.cadeaux-intro {
+    color: #6b6558;
+    font-size: 1.05rem;
+    line-height: 1.75;
+    margin-bottom: 38px;
+}
+
+.gift-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 22px;
+    text-align: left;
+}
+
+@media (min-width: 720px) {
+    .gift-list {
+        grid-template-columns: 1fr 1fr;
+    }
+    .gift-status {
+        grid-column: 1 / -1;
+    }
+}
+
+.gift-status {
+    color: #6b6558;
+    font-style: italic;
+    text-align: center;
+}
+
+.gift-card {
+    border: 1px solid var(--gold-soft);
+    border-radius: 16px;
+    padding: 22px 24px;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.gift-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 6px;
+}
+
+.gift-head h4 {
+    font-family: var(--font-serif);
+    font-weight: 600;
+    font-size: 1.25rem;
+    color: var(--ink);
+}
+
+.gift-amounts {
+    font-size: .95rem;
+    color: var(--gold);
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.gift-amounts .raised {
+    color: var(--pine);
+}
+
+.gift-desc {
+    color: #6b6558;
+    font-size: .98rem;
+    line-height: 1.6;
+    margin-bottom: 14px;
+}
+
+.progress-track {
+    width: 100%;
+    height: 8px;
+    border-radius: 999px;
+    background: rgba(182, 138, 82, 0.18);
+    overflow: hidden;
+    margin-bottom: 16px;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--gold-soft), var(--gold));
+    border-radius: 999px;
+    transition: width .6s ease;
+}
+
+.gift-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.gift-form-row {
+    display: flex;
+    gap: 10px;
+}
+
+.gift-form textarea {
+    width: 100%;
+    resize: vertical;
+    padding: 10px 14px;
+    border: 1px solid var(--gold-soft);
+    border-radius: 14px;
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: .95rem;
+    color: var(--ink);
+    background: #fff;
+}
+
+.gift-form textarea:focus {
+    outline: 2px solid var(--gold);
+    outline-offset: 1px;
+}
+
+.gift-form input {
+    flex: 1;
+    min-width: 0;
+    padding: 10px 14px;
+    border: 1px solid var(--gold-soft);
+    border-radius: 999px;
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    color: var(--ink);
+    background: #fff;
+}
+
+.gift-form input:focus {
+    outline: 2px solid var(--gold);
+    outline-offset: 1px;
+}
+
+.gift-form button {
+    padding: 10px 22px;
+    border: none;
+    border-radius: 999px;
+    background: var(--pine);
+    color: var(--ivory);
+    font-family: var(--font-serif);
+    font-weight: 600;
+    font-size: .95rem;
+    cursor: pointer;
+    transition: background .2s ease;
+    white-space: nowrap;
+}
+
+.gift-form button:hover {
+    background: #354338;
+}
+
+.gift-form button:disabled {
+    opacity: .6;
+    cursor: not-allowed;
+}
+
+.gift-feedback {
+    margin-top: 10px;
+    font-size: .9rem;
+    min-height: 1.2em;
+}
+
+.gift-feedback.ok   { color: var(--pine); }
+.gift-feedback.err  { color: #a5433a; }
+
+/* ---------- jeu page ---------- */
+
+.game-card {
+    max-width: 1400px;
+    /* padding: 20px 0px 10px; */
+    /* padding: 4% 4% 3%; */
+    padding:
+        clamp(20px, 3vh, 56px)
+        clamp(24px, 3vw, 48px)
+        clamp(16px, 2.5vh, 44px);
+        /* La carte occupe toute la hauteur visible disponible.
+       svh = "small viewport height" : la plus petite hauteur possible
+       (barre d'adresse affichée). Le jeu n'est donc JAMAIS coupé,
+       quel que soit le navigateur ou l'état de la barre d'adresse.
+       (120px = padding vertical de .page : 60px en haut + 60px en bas.) */
+    height: calc(100vh - 160px);   /* repli navigateurs anciens */
+    display: flex;
+    flex-direction: column;
+}
+
+.game-page h2 {
+    font-family: var(--font-script);
+    font-weight: 400;
+    font-size: 2.6rem;
+    color: var(--ink);
+    margin-bottom: 1%;
+}
+
+.game-intro {
+    color: #6b6558;
+    font-size: 1.02rem;
+    line-height: 1.7;
+    margin-bottom: 2%;
+}
+
+/* Conteneur transparent : occupe automatiquement TOUT l'espace restant
+   sous le titre et le texte d'intro (grâce à flex:1), sans qu'on ait à
+   deviner leur hauteur. C'est ici la vraie correction du problème de
+   taille variable selon le navigateur. */
+.game-frame-wrap {
+    flex: 1 1 auto;
+    min-height: 0;            /* autorise le rétrécissement dans le flex */
+    width: 100%;
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    container-type: size;     /* permet d'utiliser cqw / cqh ci-dessous */
+}
+
+/* Le jeu conserve le ratio 4/3 et prend la plus grande taille qui rentre
+   à la fois en largeur ET en hauteur du conteneur.
+   min(100cqw, 100cqh*4/3) = "la plus petite des deux contraintes". */
+.game-frame {
+    width: 100%;                          /* repli si cqw/cqh non supportés */
+    width: min(100cqw, 100cqh * 4 / 3);
+    max-width: 100%;
+    max-height: 100%;
+    aspect-ratio: 4 / 3;
+    border: 1px solid var(--gold-soft);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(20, 28, 38, .25);
+    display: block;
+}
+
+@media (max-width: 540px) {
+    .game-card { padding: 40px 20px 32px; }
+}
+
+/* ---------- shared full-width page layout (no photo background) ---------- */
+
+.full-page {
+    background: var(--ivory);
+}
+
+.page-hero {
+    padding: 150px 24px 50px;
+    text-align: center;
+}
+
+.page-hero .eyebrow {
+    margin-bottom: 8px;
+}
+
+.page-hero h2 {
+    font-family: var(--font-script);
+    font-weight: 400;
+    font-size: 4rem;
+    line-height: 1;
+    color: var(--ink);
+    margin-bottom: 34px;
+}
+
+.page-hero-photo {
+    max-width: 1080px;
+    margin: 0 auto;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid var(--gold-soft);
+    box-shadow: 0 25px 60px rgba(20, 28, 38, .2);
+}
+
+.page-hero-photo img {
+    display: block;
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    object-position: center 30%;
+}
+
+.page-footer-cue {
+    padding: 10px 24px 70px;
+    text-align: center;
+}
+
+@media (max-width: 540px) {
+    .page-hero { padding: 118px 16px 34px; }
+    .page-hero h2 { font-size: 2.6rem; margin-bottom: 24px; }
+    .page-hero-photo img { height: 220px; }
+}
+
+/* ---------- programme page timeline ---------- */
+
+.day-block {
+    padding: 60px 24px 64px;
+}
+
+.day-block:nth-of-type(even) {
+    background: rgba(182, 138, 82, .08);
+}
+
+.day-block-inner {
+    max-width: 980px;
+    margin: 0 auto;
+}
+
+.day-block-inner--split {
+    display: grid;
+    grid-template-columns: 1.15fr .85fr;
+    gap: 8px 52px;
+    align-items: start;
+}
+
+.day-block-inner--split .timeline {
+    grid-column: 1;
+}
+
+.day-photo {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--gold-soft);
+    box-shadow: 0 15px 40px rgba(20, 28, 38, .18);
+    position: sticky;
+    top: 110px;
+}
+
+.day-photo img {
+    display: block;
+    width: 100%;
+}
+
+.day-photo figcaption {
+    padding: 12px 16px;
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: .92rem;
+    color: #6b6558;
+    background: #fff;
+}
+
+@media (max-width: 860px) {
+    .day-block-inner--split {
+        grid-template-columns: 1fr;
+    }
+    .day-photo {
+        grid-column: 1;
+        grid-row: auto;
+        position: static;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 540px) {
+    .day-block { padding: 42px 16px 48px; }
+}
+
+/* ---------- cadeaux page (full-width layout) ---------- */
+
+.cadeaux-intro-block {
+    max-width: 760px;
+    margin: 0 auto 56px;
+    padding: 0 24px;
+    text-align: left;
+}
+
+.cadeaux-intro-block p {
+    color: #6b6558;
+    font-size: 1.08rem;
+    line-height: 1.8;
+    margin-bottom: 16px;
+}
+
+.cadeaux-intro-block p:last-of-type {
+    margin-bottom: 0;
+}
+
+.cadeaux-note {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    background: rgba(182, 138, 82, .1);
+    border: 1px solid var(--gold-soft);
+    border-radius: 14px;
+    padding: 16px 20px;
+    margin: 24px 0;
+}
+
+.cadeaux-note-icon {
+    font-size: 1.2rem;
+    line-height: 1;
+    margin-top: 2px;
+}
+
+.cadeaux-note p {
+    margin: 0 !important;
+    font-style: italic;
+    color: var(--pine) !important;
+}
+
+.cadeaux-contact {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 22px;
+    font-size: 1rem;
+    color: #6b6558;
+}
+
+.cadeaux-contact a {
+    color: var(--gold);
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid var(--gold-soft);
+    transition: border-color .2s ease;
+}
+
+.cadeaux-contact a:hover {
+    border-color: var(--gold);
+}
+
+.gift-list-section {
+    padding: 0 24px 20px;
+}
+
+.gift-list-section .gift-list {
+    max-width: 1160px;
+    margin: 0 auto;
+}
+
+@media (max-width: 540px) {
+    .cadeaux-intro-block { margin-bottom: 40px; }
+}
+
+.day {
+    font-weight: 600;
+    font-style: italic;
+    font-size: 1.6rem;
+    color: var(--gold);
+    text-align: left;
+    margin: 34px 0 18px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--gold-soft);
+}
+
+.timeline {
+    text-align: left;
+}
+
+.event {
+    display: grid;
+    grid-template-columns: 90px 1px 1fr;
+    column-gap: 20px;
+    position: relative;
+}
+
+.event::before {
+    content: "";
+    position: absolute;
+    left: 100px;
+    top: 6px;
+    bottom: -18px;
+    width: 1px;
+    background: var(--gold-soft);
+}
+
+.event:last-of-type::before {
+    display: none;
+}
+
+.node {
+    grid-column: 1;
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 2px;
+}
+
+.node-time {
+    font-size: 1.55rem;
+    letter-spacing: .04em;
+    color: var(--gold);
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.event-body {
+    grid-column: 3;
+    padding-bottom: 26px;
+    text-align: left;
+}
+
+.event-body h4 {
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: var(--ink);
+    margin-bottom: 4px;
+}
+
+.event-body p {
+    color: #6b6558;
+    font-size: 1.25rem;
+    line-height: 1.6;
+}
+
+.event-body p + p {
+    margin-top: 10px;
+}
+
+/* ---------- inline event map ---------- */
+
+.event-map {
+    margin-top: 14px;
+    border: 1px solid var(--gold-soft);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(20, 28, 38, .15);
+}
+
+.event-map iframe {
+    display: block;
+    width: 100%;
+    height: 180px;
+    border: 0;
+}
+
+.event-map-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 8px;
+    font-size: .88rem;
+    font-style: italic;
+    color: var(--gold);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color .2s ease;
+}
+
+.event-map-link:hover {
+    border-color: var(--gold);
+}
+
+/* ---------- responsive ---------- */
+
+@media (max-width: 540px) {
+    h1 { font-size: 3.4rem; }
+    .glass-card { padding: 40px 26px; }
+    .event { grid-template-columns: 64px 1px 1fr; column-gap: 14px; }
+    .event::before { left: 74px; }
+    .cadeaux-card { padding: 44px 22px 40px; }
+    .gift-head { flex-direction: column; align-items: flex-start; gap: 4px; }
+    .gift-form-row { flex-direction: column; }
+}
