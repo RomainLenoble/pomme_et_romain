@@ -25,7 +25,7 @@ const GIFTS = [
     {
         id: "lune-de-miel",
         name: "Cagnotte voyage de noces",
-        desc: "Un petit coup de pouce pour notre voyage de noces.",
+        desc: "Sûrement dans l'Europe méditerranéene. Vous participez pour le confort nocturne (pour Pomme), le transport (doux) ou la troisième boule de glace pour Romain.",
         target: null
     },
     {
@@ -40,18 +40,18 @@ const GIFTS = [
         desc: "Pour vous régaler à la façon bretonne.",
         target: 300
     },
-    {
-        id: "son",
-        name: "Systeme son et abonnement musique.",
-        desc: "Pour réveiller les voisins.",
-        target: 300
-    },
-    {
-        id: "stage-mer",
-        name: "Stage mer",
-        desc: "pour faire une croisière ensemble.",
-        target: 1500
-    },
+    // {
+    //     id: "son",
+    //     name: "Systeme son et abonnement musique.",
+    //     desc: "Pour réveiller les voisins.",
+    //     target: 300
+    // },
+    // {
+    //     id: "stage-mer",
+    //     name: "Stage mer",
+    //     desc: "pour faire une croisière ensemble.",
+    //     target: 1500
+    // },
 ];
 
 // ============================================================
@@ -95,7 +95,7 @@ function renderSkeleton() {
                     <input type="number" min="1" step="1" inputmode="numeric" placeholder="Montant en €" required>
                     <button type="submit">Participer</button>
                 </div>
-                <textarea maxlength="1000" rows="4" placeholder="Un petit mot signé pour les mariés. " required></textarea>
+                <textarea maxlength="1000" rows="6" placeholder="Un petit mot signé pour les mariés. " required></textarea>
             </form>
             <p class="gift-feedback" data-role="feedback"></p>
         `;
