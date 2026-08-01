@@ -114,6 +114,43 @@ body {
     background: linear-gradient(180deg, rgba(250,246,239,.6) 0%, rgba(250,246,239,.5) 100%);
 }
 
+/* ---------- scroll cue (bottom arrows) ---------- */
+
+.scroll-cue {
+    position: absolute;
+    bottom: 34px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    text-shadow: 0 2px 8px rgba(31, 45, 58, .65);
+    opacity: 1;
+    animation: bob 2.4s ease-in-out infinite;
+}
+
+@keyframes bob {
+    0%, 100% { transform: translate(-50%, 0); }
+    50%      { transform: translate(-50%, 8px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .scroll-cue { animation: none; }
+    .scroller   { scroll-behavior: auto; }
+}
+
+.scroll-cue--dark {
+    color: var(--ink);
+    text-shadow: 0 1px 4px rgba(255, 255, 255, .8);
+}
+
 /* ---------- glass card ---------- */
 
 .glass-card {
