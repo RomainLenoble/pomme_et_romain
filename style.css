@@ -462,6 +462,10 @@ h1 .amp {
 
 /* ---------- infos pratiques page ---------- */
 
+.infos-page .infos-card {
+    margin-top: 60px;
+}
+
 .infos-card {
     max-width: 1375px;
     padding: 80px 75px 72px;
