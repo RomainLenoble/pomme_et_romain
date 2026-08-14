@@ -25,13 +25,13 @@ const GIFTS = [
     {
         id: "lune-de-miel",
         name: "Cagnotte voyage de noces",
-        desc: "Sûrement dans l'Europe méditerranéene. Vous participez pour le confort nocturne (pour Pomme), le transport (doux) ou la troisième boule de glace pour Romain.",
+        desc: "Sûrement dans l'Europe méditerranéene. Vous participez pour le transport (doux), le confort nocturne (pour Pomme) et la troisième boule de glace (pour Romain).",
         target: null
     },
     {
         id: "velo",
         name: "Vélo éléctrique et remorque",
-        desc: "Pour remplacer un vélo cargo.",
+        desc: "Pour transporter les courses et monter dans le train avec.",
         target: 5000
     },
     {
