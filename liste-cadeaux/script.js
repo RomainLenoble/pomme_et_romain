@@ -31,7 +31,7 @@ const GIFTS = [
     {
         id: "velo",
         name: "Vélo éléctrique et remorque",
-        desc: "Pour faire de grosses courses en ville.",
+        desc: "Pour remplacer un vélo cargo.",
         target: 5000
     },
     {

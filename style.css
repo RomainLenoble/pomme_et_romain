@@ -574,7 +574,10 @@ h1 .amp {
     grid-column: 1 / -1;
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 14px;
+    max-width: 900px;
+    margin: 0 auto;
     padding: 18px 22px;
     border-radius: 12px;
     background: linear-gradient(135deg, #c79a5f, #9a6f35);
@@ -584,11 +587,15 @@ h1 .amp {
     font-size: 1.02rem;
     font-weight: 600;
     line-height: 1.55;
-    text-align: left;
+    text-align: center;
 }
 
 .infos-warning-text strong {
-    text-decoration: underline;
+    display: block;
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-decoration: none;
 }
 
 .infos-warning-icon {
