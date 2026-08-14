@@ -38,7 +38,7 @@ const GIFTS = [
         id: "krampouz",
         name: "Crépière Krampouz",
         desc: "Pour vous régaler à la façon bretonne.",
-        target: 300
+        target: 400
     },
     // {
     //     id: "son",

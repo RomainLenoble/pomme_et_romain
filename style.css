@@ -118,7 +118,7 @@ body {
 
 .scroll-cue {
     position: absolute;
-    bottom: 34px;
+    bottom: 80px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 2;
@@ -144,6 +144,17 @@ body {
 @media (prefers-reduced-motion: reduce) {
     .scroll-cue { animation: none; }
     .scroller   { scroll-behavior: auto; }
+}
+
+.scroll-cue span {
+    font-size: 1.5rem;
+    color: #000;
+}
+
+.scroll-cue svg {
+    color: #000;
+    width: 40px;
+    height: 40px;
 }
 
 .scroll-cue--dark {
