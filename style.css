@@ -131,9 +131,22 @@ body {
     font-size: 1.1rem;
     letter-spacing: .1em;
     text-transform: uppercase;
+    text-align: center;
     text-shadow: 0 2px 8px rgba(31, 45, 58, .65);
     opacity: 1;
     animation: bob 2.4s ease-in-out infinite;
+}
+
+@media (max-width: 640px) {
+    .scroll-cue { bottom: 60px; }
+    .scroll-cue span { font-size: clamp(.9rem, 3vw, 1.1rem); }
+    .scroll-cue svg { width: clamp(24px, 5vw, 40px); height: clamp(24px, 5vw, 40px); }
+}
+
+@media (max-width: 480px) {
+    .scroll-cue { bottom: 40px; }
+    .scroll-cue span { font-size: clamp(.8rem, 4vw, 1rem); }
+    .scroll-cue svg { width: clamp(20px, 6vw, 32px); height: clamp(20px, 6vw, 32px); }
 }
 
 @keyframes bob {
@@ -147,7 +160,7 @@ body {
 }
 
 .scroll-cue span {
-    font-size: 1.5rem;
+    font-size: clamp(.9rem, 3vw, 1.5rem);
     color: #000;
 }
 
