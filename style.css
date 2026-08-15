@@ -520,14 +520,14 @@ h1 .amp {
     font-family: var(--font-serif);
     font-weight: 600;
     font-style: italic;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     color: var(--gold);
     margin-bottom: 8px;
 }
 
 .info-body p {
     color: #6b6558;
-    font-size: 1rem;
+    font-size: 1.1rem;
     line-height: 1.6;
 }
 
