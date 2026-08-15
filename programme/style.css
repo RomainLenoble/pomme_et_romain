@@ -576,12 +576,34 @@ h1 .amp {
     padding-top: 2px;
 }
 
+@media (max-width: 540px) {
+    .node {
+        justify-content: center;
+    }
+}
+
+
+
+
 .node-time {
-    font-size: 1.55rem;
+    font-size: clamp(.85rem, .5rem + 1vw, 1.2rem);
     letter-spacing: .04em;
     color: var(--gold);
     font-weight: 600;
     white-space: nowrap;
+    max-width: 100%;
+    overflow-wrap: break-word;
+    text-overflow: ellipsis;
+    padding-right: 8px;
+    text-align: center;
+}
+
+@media (max-width: 700px) {
+    .node-time {
+        white-space: normal;
+        overflow-wrap: break-word;
+        text-overflow: clip;
+    }
 }
 
 .event-body {
@@ -592,14 +614,14 @@ h1 .amp {
 
 .event-body h4 {
     font-weight: 600;
-    font-size: 1.5rem;
+    font-size: clamp(.85rem, .8rem + 1vw, 1.4rem);
     color: var(--ink);
     margin-bottom: 4px;
 }
 
 .event-body p {
     color: #6b6558;
-    font-size: 1.25rem;
+    font-size: clamp(.85rem, .7rem + 1vw, 1.2rem);
     line-height: 1.6;
 }
 
