@@ -652,7 +652,7 @@ h1 .amp {
 
 .event-warning p {
     color: #fff;
-    font-size: 1.25rem;
+    font-size: clamp(.85rem, .7rem + 1vw, 1.3rem);
     line-height: 1.5;
 }
 
