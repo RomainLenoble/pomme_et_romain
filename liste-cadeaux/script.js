@@ -40,6 +40,18 @@ const GIFTS = [
         desc: "Pour vous régaler à la façon bretonne.",
         target: 400
     },
+    {
+        id: "machine_coudre",
+        name: "Machine à coudre",
+        desc: "Pour vous réparer et créer.",
+        target: 600
+    },
+    {
+        id: "sac",
+        name: "Sac de voyage",
+        desc: "Pour voyager toute notre vie.",
+        target: 300
+    },
     // {
     //     id: "son",
     //     name: "Systeme son et abonnement musique.",
