@@ -10,15 +10,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Mea+Culpa&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
-
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
-    <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 </head>
 <body>
 
 <nav class="site-nav" aria-label="Navigation du site">
     <a href="#accueil" class="site-nav-link active" data-target="accueil">Accueil</a>
     <a href="programme/index.html" class="site-nav-link" data-target="programme">Programme</a>
+    <a href="informations-pratiques/index.html" class="site-nav-link" data-target="infos">Informations pratiques</a>
     <a href="liste-cadeaux/index.html" class="site-nav-link" data-target="cadeaux">Cadeaux</a>
     <a href="jeu/index.html" class="site-nav-link" data-target="jeu">Jeu</a>
 </nav>
@@ -32,7 +30,7 @@
 
         <img src="image/nid-1344-web.jpg" alt="Pomme et Romain" class="hero-photo-full">
 
-        <a href="#infos" class="scroll-cue scroll-cue--dark" aria-label="Découvrir les informations pratiques">
+        <a href="informations-pratiques/index.html" class="scroll-cue scroll-cue--dark" aria-label="Découvrir les informations pratiques">
             <span>Informations pratiques</span>
             <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.4">
                 <path d="M12 4v15M6 13l6 6 6-6"/>
@@ -40,200 +38,9 @@
         </a>
     </section>
 
-    <!-- PAGE 2 — INFOS PRATIQUES -->
-    <section class="page infos-page" id="infos">
-        <div class="bg" style="background-image:url('image/fair-part.jpeg')"></div>
-        <div class="bg-veil bg-veil--light"></div>
-
-        <div class="glass-card infos-card">
-            <p class="eyebrow">20 · 21 février 2027</p>
-            <h2>Informations pratiques</h2>
-
-            <div class="infos-grid">
-
-                <p class="infos-warning">
-                    <span class="infos-warning-icon" aria-hidden="true">⚠️</span>
-                    <span class="infos-warning-text">
-                        <strong>Attention, week-end chargé (anticipez hébergement et trajet) </strong> <br>
-                            
-                        C'est le milieu des vacances scolaires au ski.<br>
-
-                        <!-- Si vous pouvez, essayez de prioriser une arrivée le vendredi soir. Prenez de -->
-                        <!-- l'avance le jour&nbsp;J, la circulation sur l'autoroute sera difficile dès 10h du matin. Les locaux conseillent de passer par le tunnel du chat et de prendre les petites routes. <br> -->
-                        <!-- Pour les hébergements, nous conseillons également de vous y prendre (très) à l'avance. De nombreuses personnes coupent la route en 2 et dorment dans la vallée le vendredi soir pour éviter les plus gros bouchons.  -->
-                    </span>
-                    <span class="infos-warning-icon" aria-hidden="true">⚠️</span>
-                </p>
-
-                <div class="info-block">
-                    <span class="info-icon" aria-hidden="true">⛪️</span>
-                    <div class="info-body">
-                        <h3>Célébration</h3>
-                        <p>
-                            <a class="info-link" href="https://www.google.com/maps/search/?api=1&query=Eglise+Saint-Martin,+40+Rue+du+19+Mars+1962,+38530+Barraux" target="_blank" rel="noopener">
-                                Église Saint-Martin de Barraux
-                            </a><br>
-                            40 Rue du 19 Mars 1962<br>
-                            38530 Barraux
-                        </p>
-                        <p class="info-time">Samedi 20 février — 10h30</p>
-                    </div>
-                </div>
-
-                <div class="info-block">
-                    <span class="info-icon" aria-hidden="true">🥂</span>
-                    <div class="info-body">
-                        <h3>Vin d'honneur &amp; Déjeuner</h3>
-                        <p>
-                            <a class="info-link" href="https://www.google.com/maps/search/?api=1&query=45.4354507,5.9875743" target="_blank" rel="noopener">
-                                Fort Barraux
-                            </a><br>
-                            38530 Barraux
-                        </p>
-                        <p class="info-time">Samedi 20 février — à partir de 12h00</p>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="infos-grid infos-grid--practical">
-
-                <div class="info-block">
-                    <span class="info-icon" aria-hidden="true">🧸</span>
-                    <div class="info-body">
-                        <h3>Enfants</h3>
-                        <p>
-                            Il y a une <strong>petite salle</strong> de rangement que vous pourrez convertir en salle de sieste, mais elle donne sur la salle principale et sera bruyante. <br>
-                            <!-- Et si vous offriez à vos enfants un    weekend sans parents ?</p> -->
-                    </div>
-                </div>
-
-
-                <div class="info-block">
-                    <span class="info-icon" aria-hidden="true">🏨</span>
-                    <div class="info-body">
-                        <h3>Hébergement</h3>
-                        <p>
-                            Il existe plusieurs options Airbnb à Barraux, 
-                            Il n'y a pas d'hôtel dans le village mais quelques Airbnb. Barraux est situé à 20 min de voiture de Chambéry sans bouchon. <br> 
-                            Nous conseillons également de vous y prendre à l'avance. </p>
-                    </div>
-                </div>
-
-
-                <div class="info-block">
-                    <span class="info-icon" aria-hidden="true">🚗</span>
-                    <div class="info-body">
-                        <h3>Voiture</h3>
-                        <p>La circulation sur l'<strong>autoroute sera difficile</strong> dès le matin. Les locaux conseillent de passer par le tunnel du chat et de prendre les petites routes. <br>
-                    Si vous prévoyez de dormir dans la région (Lyon), sachez que d'autres skieurs auront la même idée. <strong>Prenez beaucoup de marge.</strong> </p>
-                    </div>
-                </div>
-
-
-                <div class="info-block">
-                    <span class="info-icon" aria-hidden="true">🚉</span>
-                    <div class="info-body">
-                        <h3>Train</h3>
-                        <p><strong>Gare de Pontcharra-sur-Bréda</strong>, à environ 3,5&nbsp;km de Barraux. <br> 
-                        Possibilité de navette vers l'église pour une arrivée avant 10h (prévenez à l'avance).</p> 
-
-                    </div>
-                </div>
-
-
-
-                <div class="info-block">
-                    <span class="info-icon" aria-hidden="true">🅿️</span>
-                    <div class="info-body">
-                        <h3>Parking</h3>
-                        <p><strong>Nous vous conseillons de vous garer directement au Fort Barraux.</strong> Il est situé à 15 min à pied de l'église Saint-Martin. <br> 
-                            Des places en nombre limité sont disponibles à proximité de l'église si besoin.</p>
-                        </div>
-                </div>
-
-
-            </div>
-
-            <h3 class="infos-subheading">Les lieux du week-end</h3>
-            <div id="weekend-map" class="weekend-map weekend-map--square" role="img" aria-label="Carte des lieux du week-end : Église Saint-Martin de Barraux, Fort Barraux, départ du domaine nordique de Féclaz"></div>
-            <ul class="weekend-map-legend">
-                <li><span class="legend-swatch" aria-hidden="true">⛪️</span> Église Saint-Martin</li>
-                <li><span class="legend-swatch" aria-hidden="true">🥂</span> Fort Barraux</li>
-                <li><span class="legend-swatch" aria-hidden="true">🎿</span> Domaine nordique de Féclaz</li>
-            </ul>
-
-            <div class="info-block info-block--contact">
-                <!-- <span class="info-icon" aria-hidden="true">✉️</span> -->
-                <div class="info-body">
-                    <h3>Contact</h3>
-                    <p class="infos-placeholder">pomme.hirschauer@gmail.com ou romain.lenoble@proton.me</p>
-                </div>
-            </div>
-
-            <a href="programme/index.html" class="infos-cta">Voir le programme complet du week-end →</a>
-        </div>
-
-    </section>
-
 </main>
 
 <script type="module" src="script.js"></script>
-
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        var mapEl = document.getElementById("weekend-map");
-        if (!mapEl || typeof L === "undefined") return;
-
-        var places = [
-            { name: "Église Saint-Martin de Barraux", detail: "Cérémonie — samedi 10h30", lat: 45.4353, lng: 5.9783, icon: "⛪️" },
-            { name: "Fort Barraux",                    detail: "Vin d'honneur & déjeuner — samedi 12h00", lat: 45.4354507, lng: 5.9875743, icon: "🥂", label: "Barraux" },
-            { name: "Domaine nordique de Féclaz",       detail: "Départ balade & pique-nique — vendredi 10h30", lat: 45.647515, lng: 5.9855204, icon: "🎿", label: "La Féclaz" }
-        ];
-
-        var map = L.map(mapEl, { scrollWheelZoom: false });
-        // L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
-        //     maxZoom: 19,
-        //     subdomains: "abcd",
-        //     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
-        L.tileLayer("https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png", {
-            maxZoom: 19,
-            subdomains: "abcd",
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
-        // L.tileLayer("https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png", {
-            // maxZoom: 17,
-            // subdomains: "abc",
-            // attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="https://opentopomap.org">OpenTopoMap</a> (CC-BY-SA)'
-        }).addTo(map);
-
-        
-        var markers = places.map(function (p) {
-            var icon = L.divIcon({
-                html: '<span style="font-size:24px;line-height:1;">' + p.icon + '</span>',
-                className: "weekend-map-icon",
-                iconSize: [32, 32],
-                iconAnchor: [16, 16]
-            });
-            var marker = L.marker([p.lat, p.lng], { icon: icon })
-                .addTo(map)
-                .bindPopup("<strong>" + p.name + "</strong><br>" + p.detail);
-
-            if (p.label) {
-                marker.bindTooltip(p.label, {
-                    permanent: true,
-                    direction: "top",
-                    offset: [0, -14],
-                    className: "weekend-map-label"
-                });
-            }
-
-            return marker;
-        });
-
-        var group = L.featureGroup(markers);
-        map.fitBounds(group.getBounds(), { padding: [40, 40] });
-    });
-</script>
 
 </body>
 </html>
