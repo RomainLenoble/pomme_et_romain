@@ -198,8 +198,22 @@ body {
         linear-gradient(180deg, var(--ivory) 0%, #f3ecdf 100%);
 }
 
+.hero-title {
+    font-family: "Quicksand", var(--font-serif);
+    font-weight: 600;
+    font-size: 2.4rem;
+    line-height: 1.25;
+    color: var(--ink);
+    margin-bottom: 14px;
+}
+
 .hero-eyebrow {
+    font-size: 1.15rem;
     margin-bottom: 22px;
+}
+
+@media (max-width: 540px) {
+    .hero-title { font-size: 1.8rem; }
 }
 
 .hero-photo-full {
