@@ -138,6 +138,16 @@
                         </div>
                 </div>
 
+                <div class="info-block">
+                    <span class="info-icon" aria-hidden="true">✉️</span>
+                    <div class="info-body">
+                        <h3>Contact</h3>
+                        <p>
+                            <a class="info-link" href="mailto:pomme.hirschauer@gmail.com">pomme.hirschauer@gmail.com</a><br>
+                            <a class="info-link" href="mailto:romain.lenoble@proton.me">romain.lenoble@proton.me</a>
+                        </p>
+                    </div>
+                </div>
 
             </div>
 
@@ -149,15 +159,7 @@
                 <li><span class="legend-swatch" aria-hidden="true">🎿</span> Domaine nordique de Féclaz</li>
             </ul>
 
-            <div class="info-block info-block--contact">
-                <!-- <span class="info-icon" aria-hidden="true">✉️</span> -->
-                <div class="info-body">
-                    <h3>Contact</h3>
-                    <p class="infos-placeholder">pomme.hirschauer@gmail.com ou romain.lenoble@proton.me</p>
-                </div>
-            </div>
-
-            <a href="../programme/index.html" class="infos-cta">Voir le programme complet du week-end →</a>
+            <!-- <a href="../programme/index.html" class="infos-cta">Voir le programme complet du week-end →</a> -->
         </div>
 
     </section>
@@ -176,18 +178,10 @@
         ];
 
         var map = L.map(mapEl, { scrollWheelZoom: false });
-        // L.tileLayer("https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png", {
-        //     maxZoom: 19,
-        //     subdomains: "abcd",
-        //     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
-        L.tileLayer("https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png", {
-            maxZoom: 19,
-            subdomains: "abcd",
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>'
-        // L.tileLayer("https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png", {
-            // maxZoom: 17,
-            // subdomains: "abc",
-            // attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="https://opentopomap.org">OpenTopoMap</a> (CC-BY-SA)'
+        L.tileLayer("https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png", {
+            maxZoom: 17,
+            subdomains: "abc",
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="https://opentopomap.org">OpenTopoMap</a> (CC-BY-SA)'
         }).addTo(map);
 
 
