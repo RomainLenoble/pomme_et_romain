@@ -103,6 +103,7 @@ function renderSkeleton() {
             ${gift.target ? `<div class="progress-track"><div class="progress-fill" data-role="fill" style="width:0%"></div></div>` : ""}
             ${gift.desc ? `<p class="gift-desc">${gift.desc}</p>` : ""}
             <form class="gift-form" data-role="form">
+                <input type="text" maxlength="80" placeholder="Votre nom" required>
                 <div class="gift-form-row">
                     <input type="number" min="1" step="1" inputmode="numeric" placeholder="Montant en €" required>
                     <button type="submit">Participer</button>
@@ -133,6 +134,7 @@ function updateCard(giftId, raised) {
 
 function wireForm(card, gift) {
     const form = card.querySelector('[data-role="form"]');
+    const nameEl = form.querySelector('input[type="text"]');
     const input = form.querySelector('input[type="number"]');
     const messageEl = form.querySelector("textarea");
     const button = form.querySelector("button");
@@ -140,11 +142,18 @@ function wireForm(card, gift) {
 
     form.addEventListener("submit", async (e) => {
         e.preventDefault();
+        const name = nameEl.value.trim().slice(0, 80);
         const amount = Math.floor(Number(input.value));
         const message = messageEl.value.trim().slice(0, 1000);
 
         feedback.textContent = "";
         feedback.className = "gift-feedback";
+
+        if (!name) {
+            feedback.textContent = "Merci d'indiquer votre nom.";
+            feedback.className = "gift-feedback err";
+            return;
+        }
 
         if (!amount || amount <= 0) {
             feedback.textContent = "Merci d'indiquer un montant valide.";
@@ -158,9 +167,14 @@ function wireForm(card, gift) {
             return;
         }
 
+        // Le nom est ajout\u00e9 au texte principal (au lieu d'un champ Firestore
+        // s\u00e9par\u00e9) pour qu'il apparaisse directement dans la console Firebase.
+        const fullMessage = `${name} : ${message}`;
+
         button.disabled = true;
         try {
-            await contribute(gift.id, amount, message);
+            await contribute(gift.id, amount, fullMessage);
+            nameEl.value = "";
             input.value = "";
             messageEl.value = "";
             feedback.textContent = "Merci pour votre participation \u2728";
